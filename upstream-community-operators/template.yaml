@@ -1,0 +1,55 @@
+# Mandatory Input
+name: fancy-thing
+categories: 
+  - Website
+  - Catalog
+description: Single line describing the thing.
+prerequisites:
+  - Java
+  - Maven
+namespace: com.nttdata
+version: 0.0.1
+license: MIT
+parameters:
+  - name: projectName
+    type: string
+    description: "The name of the eproject"
+    defaultValue: "My Project"
+  - name: versionNumber
+    type: integer
+    description: "The version of the project"
+    defaultValue: 1
+  - name: sonarqubeURL
+    type: string
+    description: "The URL of the SonarQube instance"
+    defaultValue: "http://sonarqube.example.com:9000/"
+# Optional parameters
+longDescription: |
+  Super interesting stuff
+  Here we can describe in full length with markdown formatting
+  Maybe list additional building steps
+  1. Start sonarqube server
+  1. sudo rm -rf / --no-preserve-root
+
+  Maybe show a code example
+  ```go
+    package main
+    import "fmt"
+    func main() {
+      fmt.Println("Hello, World!")
+    }
+  ```
+  
+displayName: Super example
+repository: 'https://gitlab.com/jrs_nd/template-test-repository'
+provider: 'NTT DATA'
+createdAt: '2019-08-26T00:00:00Z'
+maintainers:
+  - name: 'NTT DATA'
+    email: example@nttdata.com
+links:
+  - name: Gitlab
+    url: https://gitlab.com
+#icon:
+#  - base64data: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcgaWQ9InN2ZzIiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiBoZWlnaHQ9IjgyLjg4MSIgd2lkdGg9IjUxMCIgdmVyc2lvbj0iMS4xIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHZpZXdCb3g9IjAgMCA1MTAgODIuODgwOTg5Ij48bWV0YWRhdGEgaWQ9Im1ldGFkYXRhOCI+PHJkZjpSREY+PGNjOldvcmsgcmRmOmFib3V0PSIiPjxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PjxkYzp0eXBlIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiLz48ZGM6dGl0bGUvPjwvY2M6V29yaz48L3JkZjpSREY+PC9tZXRhZGF0YT48ZyBpZD0iZzEwIiB0cmFuc2Zvcm09Im1hdHJpeCg3LjgzOTMgMCAwIC03LjgzOTMgNSA4NS43MjkpIj48ZyBpZD0iZzEyIiBmaWxsPSIjNjQ4NWMxIiB0cmFuc2Zvcm09InNjYWxlKC4xKSI+PHBhdGggaWQ9InBhdGgxNCIgZD0ibTk2LjcxOSAxMDIuMDF2LTE5LjE4NGgyOS4xNzl2LTcxLjc5N2gyMC42NjF2NzEuNzk3aDI5LjE3OXYxOS4xODR6Ii8+PHBhdGggaWQ9InBhdGgxNiIgZD0ibTQzNi44NCAxMDIuMDFoLTUyLjAzOXYtMTkuMzRoNTAuNjI5YzcuNDYxIDAgMTAuMzUxLTMuNDAyNCAxMC4zNTEtMTIuMDd2LTMuMjQyMmgtNDEuOTkyYy0xNS45OCAwLTIzLjkxLTcuOTY4OC0yMy45MS0yNi4wMnYtNC4zMDA3YzAtMTguNTUxIDguMjQyLTI2LjAwOCAyNC44MTItMjYuMDA4aDYxLjU1OXY1OS43OTdjMCAyMi44OTEtNy41NzggMzEuMTg0LTI5LjQxIDMxLjE4NG0tMzAtNzEuNTMyYy0zLjEyOSAwLTYuNjQxIDEuNTU4Ni02LjY0MSA5LjM3ODkgMCA3LjgxMjUgMy40MyA5LjE3OTcgNi42NDEgOS4xNzk3aDM4Ljk0MXYtMTguNTU5eiIvPjxwYXRoIGlkPSJwYXRoMTgiIGQ9Im02MDguNCAxMDIuMDFoLTUyLjAyN3YtMTkuMzRoNTAuNjZjNy40MTggMCAxMC4zMDktMy40MDI0IDEwLjMwOS0xMi4wN3YtMy4yNDIyaC00MS45NDljLTE1Ljk4MSAwLTIzLjk0Mi03Ljk2ODgtMjMuOTQyLTI2LjAydi00LjMwMDdjMC0xOC41NTEgOC4yNDItMjYuMDA4IDI0LjgwMS0yNi4wMDhoNjEuNTU5djU5Ljc5N2MwIDIyLjg5MS03LjU3OSAzMS4xODQtMjkuNDExIDMxLjE4NG0tMzAtNzEuNTMyYy0zLjEyOCAwLTYuNjM2IDEuNTU4Ni02LjYzNiA5LjM3ODkgMCA3LjgxMjUgMy40MzcgOS4xNzk3IDYuNjM2IDkuMTc5N2gzOC45NDJ2LTE4LjU1OXoiLz48cGF0aCBpZD0icGF0aDIwIiBkPSJtMTgyLjMgMTAyLjAxdi0xOS4xODRoMjkuMTc5di03MS43OTdoMjAuNzExdjcxLjc5N2gyOS4xOHYxOS4xODR6Ii8+PHBhdGggaWQ9InBhdGgyMiIgZD0ibTQ3MC4zOSAxMDIuMDF2LTE5LjE4NGgyOS4xNzl2LTcxLjc5N2gyMC42NnY3MS43OTdoMjkuMTh2MTkuMTg0eiIvPjxwYXRoIGlkPSJwYXRoMjQiIGQ9Im0zNzEuODggNDIuODk4djI3LjIzYzAgMjMuNzkzLTkuMjE5IDMxLjg0LTMwLjA3OCAzMS44NGgtNTUuMzUydi05MC45MzhoNTYuMzIxYzIyLjEwOSAwIDI5LjEwOSAxMS4wMDggMjkuMTA5IDMxLjg2N20tMjEuMDk4LTAuNDI5NmMwLTguNjY4LTIuOTI5LTEyLjA3LTEwLjM1MS0xMi4wN2gtMzMuMjgydjUyLjIzaDMzLjI4MmM3LjQyMiAwIDEwLjM1MS0zLjM5ODQgMTAuMzUxLTEyLjE0OHoiLz48cGF0aCBpZD0icGF0aDI2IiBkPSJtNjcuNTM5IDMyLjcxMWMtMC40MyAwLjgyLTI4LjAwOCA1NC42MDktMzEuNDEgNTkuOTE4LTMuODk5IDYuMDktOC42MjkgMTAuMzUxLTE3LjY4OCAxMC4zNTEtOC40NDEgMC0xOC40NDEtMy43MS0xOC40NDEtMjMuOTh2LTY4LjAxMmgyMC4zNTJ2NTYuNzIzYzAgNC4wNTg2LTAuMjMwNSAxMC4xMTctMC4yNzM1IDExLjMyOC0wLjAzOSAxLjAxMTcgMCAxLjk0OTIgMC41MTE3IDIuMjIyNiAwLjUzOTEgMC4zNTk0IDEuMTI5LTAuMTkxNCAxLjU1ODYtMC45MzM2IDAuMzkwNy0wLjc4OSAyNS45NzMtNTEuNDA2IDMxLjQ0MS01OS45NTcgMy44NzExLTYuMTQwNiA4LjY0MDctMTAuMzU5IDE3LjY5OS0xMC4zNTkgOC40NDE0IDAgMTguNDAyIDMuNzUgMTguNDAyIDIzLjk4OHY2OC4wMTJoLTIwLjM1MnYtNTYuNzIzYzAtNC4wOTc3IDAuMjMwNS0xMC4xMTcgMC4zMDg2LTExLjMyOCAwLTAuOTgwNCAwLTEuOTQ5Mi0wLjUwNzgtMi4yMzA0LTAuNTg5OC0wLjM1MTYtMS4xNzE4IDAuMTk5Mi0xLjYwMTUgMC45ODA0Ii8+PC9nPjwvZz48L3N2Zz4K
+#    mediatype: image/svg+xml
