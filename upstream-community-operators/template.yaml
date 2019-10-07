@@ -41,7 +41,7 @@ longDescription: |
   ```
   
 displayName: Super example
-repository: 'https://gitlab.com/jrs_nd/template-test-repository'
+repository: 'https://github.com/Altemista/Template'
 provider: 'NTT DATA'
 createdAt: '2019-08-26T00:00:00Z'
 maintainers:
