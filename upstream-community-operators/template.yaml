@@ -25,7 +25,8 @@ parameters:
     defaultValue: "http://sonarqube.example.com:9000/"
 # Optional parameters
 longDescription: |
-  Super interesting stuff
+  Super interesting stuff.
+  
   Here we can describe in full length with markdown formatting
   Maybe list additional building steps
   1. Start sonarqube server
