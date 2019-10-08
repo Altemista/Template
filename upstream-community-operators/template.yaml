@@ -27,9 +27,10 @@ parameters:
 longDescription: |
   Super interesting stuff.
   
-  Here we can describe in full length with markdown formatting
+  Here we can describe in full length with markdown formatting.
   Maybe list additional building steps
   1. Start sonarqube server
+  1. git clone ...
   1. sudo rm -rf / --no-preserve-root
 
   Maybe show a code example
