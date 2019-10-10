@@ -10,6 +10,7 @@ prerequisites:
   - Docker
 namespace: com.nttdata
 version: 0.0.3
+replaces: 0.0.2
 license: MIT
 parameters:
   - name: projectName
