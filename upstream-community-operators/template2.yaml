@@ -46,6 +46,7 @@ longDescription: |
 displayName: Sample
 repository: 'https://github.com/Altemista/Template'
 provider: 'NTT DATA'
+replaces: 0.0.2
 createdAt: '2019-08-26T00:00:00Z'
 maintainers:
   - name: 'NTT DATA'
