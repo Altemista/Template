@@ -1,0 +1,61 @@
+name: quarkus
+displayName: Quarkus Template
+
+categories: 
+  - Website
+  - Catalog
+
+prerequisites:
+  - name: Java
+    type: Software
+    description: Java JDK must be installed
+    link: http://oracle.com
+  - name: Maven
+    type: Software
+    description: Maven Engine must be installed
+    link: http://maven.com
+
+version: 0.0.1
+license: MIT
+
+description: Brick to create a new project based on quarkus.
+longDescription: |
+  # Quarkus sample 
+  This template will prepare a quarkus plugin
+  
+repository: 'https://git.altemista.cloud/altemista/altemista2/dev-portal'
+provider: 'Everis'
+createdAt: '2019-10-16T00:00:00Z'
+maintainers:
+  - name: 'Everis'
+    email: Alberto Cortes Cabello <alberto.cortes.cabello@everis.com>
+
+
+image: maven:3.6.2-jdk-8
+# Do we need the command key for each command?
+commands:
+- mvn io.quarkus:quarkus-maven-plugin:0.19.1:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DclassName=$className -Dpath=$path &&
+# - mvn io.quarkus:quarkus-maven-plugin:0.19.1:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DclassName=$className -Dpath=$path &&
+
+parameters:
+- name: groupId
+  type: input
+  message: "Group id for creating the artifact"
+  default: com.example
+- type: list
+  name: version
+  message: Which java version do you want to use?
+  choices: [1.5.0-SNAPSHOT,1.4.0-SNAPSHOT] 
+- name: artifactId
+  type: input
+  message: Artifact id for creating the artifact
+  default: getting-started
+- name: className
+  type: input
+  message: Class name for creating the initial className
+  default: org.acme.quickstart.GreetingResource
+- name: path
+  type: input
+  message: Path for the initial endpoint
+  default: "/hello"
+ 
