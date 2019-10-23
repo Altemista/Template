@@ -1,0 +1,59 @@
+name: yeoman
+displayName: Yeoman
+
+categories: 
+  - Project Management
+  - Website
+
+prerequisites:
+- name: Node
+  type: software
+  description: Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+  link: https://nodejs.org/en/
+- name: npm
+  type: software
+  description: Essential JavaScript development tools that help you go to market faster
+  link: http://npmjs.com  
+- name: Yeoman
+  type: software
+  description: THE WEB'S SCAFFOLDING TOOL FOR MODERN WEBAPPS
+  link: http://yeoman.io
+
+version: 0.0.1
+license: MIT
+
+description: Brick to scaffold a project with yeoman.
+  
+repository: 'https://git.altemista.cloud/altemista/altemista2/dev-portal'
+provider: 'Everis'
+createdAt: '2019-10-23T00:00:00Z'
+maintainers:
+  - name: 'Everis'
+    email: Alberto Cortes Cabello <alberto.cortes.cabello@everis.com>
+
+commands: 
+- npm cache clean --force  
+- npm install -g generator-$generator
+- yo $generator
+
+parameters:
+- type: input
+  name: artifactId
+  message: Project name
+  default: new-application
+- type: input
+  name: groupId
+  message: Artifact id for creating the groupId
+  default: com.mycompany
+- type: list
+  name: terasolunaPlusVersion
+  message: Terasoluna Version
+  choices: ['1.0.0.RELEASE', '1.1.0.RELEASE','1.2.0.RELEASE','1.3.0.RELEASE','1.4.0.RELEASE','1.5.0.RELEASE','2.0.0.RELEASE']
+- type: input
+  name: version
+  message: version project
+  default: 1.0.0-SNAPSHOT
+- type: input
+  name: appShortId
+  message: App. shorth ID
+  default: application   
