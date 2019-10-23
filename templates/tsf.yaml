@@ -1,0 +1,52 @@
+name: tsf
+displayName: Team Foundation Server
+
+categories: 
+  - Project Management
+  - Website
+
+prerequisites:
+  - name: Java
+    type: Software
+    description: Java JDK must be installed
+    link: http://oracle.com
+  - name: Maven
+    type: Software
+    description: Maven Engine must be installed
+    link: http://maven.com
+
+version: 0.0.1
+license: MIT
+
+description: Brick to create a new project based on tsf.
+  
+repository: 'https://git.altemista.cloud/altemista/altemista2/dev-portal'
+provider: 'Everis'
+createdAt: '2019-10-23T00:00:00Z'
+maintainers:
+  - name: 'Everis'
+    email: Alberto Cortes Cabello <alberto.cortes.cabello@everis.com>
+
+commands: 
+- mvn tsf:boot -DgroupId=$groupId -DartifactId=$artifactId -DterasolunaPlusVersion=$terasolunaPlusVersion -Dversion=$version -DappShortId=$appShortId -s C:\terasoluna-plus\apache-maven-3.3.9\conf\settings.xml
+parameters:
+- type: input
+  name: artifactId
+  message: Project name
+  default: new-application
+- type: input
+  name: groupId
+  message: Artifact id for creating the groupId
+  default: com.mycompany
+- type: list
+  name: terasolunaPlusVersion
+  message: Terasoluna Version
+  choices: ['1.0.0.RELEASE', '1.1.0.RELEASE','1.2.0.RELEASE','1.3.0.RELEASE','1.4.0.RELEASE','1.5.0.RELEASE','2.0.0.RELEASE']
+- type: input
+  name: version
+  message: version project
+  default: 1.0.0-SNAPSHOT
+- type: input
+  name: appShortId
+  message: App. shorth ID
+  default: application   
