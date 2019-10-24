@@ -20,9 +20,15 @@ license: MIT
 
 description: Brick to create a new project based on quarkus.
 longDescription: |
-  # Quarkus sample 
   This template will prepare a quarkus plugin
-  
+  ## Quarkus sample 
+  List of things:
+  1. First thing
+  2. Second thing
+  3. Third thing
+  ```bash
+  mvn io.quarkus:quarkus-maven-plugin:0.19.1:create ...
+  ```
 repository: 'https://git.altemista.cloud/altemista/altemista2/dev-portal'
 provider: 'Everis'
 createdAt: '2019-10-16T00:00:00Z'
