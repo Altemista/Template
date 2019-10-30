@@ -1,5 +1,5 @@
 name: hello-go
-displayName: Hello Go
+displayName: Hello World in Golang
 
 categories: 
   - Website
@@ -21,6 +21,28 @@ longDescription: |
 
   The application itself is an http server listening on port 8080 
 
+  ```golang
+    package main
+
+    import (
+      "fmt"
+      "log"
+      "net/http"
+    )
+
+    func sayHello(w http.ResponseWriter, r *http.Request) {
+      log.Print("Received request.")
+      fmt.Fprintf(w, "Hello, {{name}}\n")
+    }
+
+    func main() {
+      http.HandleFunc("/", sayHello)
+      if err := http.ListenAndServe(":8080", nil); err != nil {
+        panic(err)
+      }
+    }
+  ```
+
 repository: 'https://gitlab.com/jrs_nd/hello-go'
 provider: 'NTT Data'
 createdAt: '2019-10-30T00:00:00Z'
@@ -36,5 +58,5 @@ commands:
 parameters:
 - name: eventName
   type: input
-  message: "Who do you want to greet? "
+  message: "Greeting parameter: "
   default: World
