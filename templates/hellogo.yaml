@@ -58,5 +58,5 @@ commands:
 parameters:
 - name: eventName
   type: input
-  message: "Greeting parameter: "
+  message: "Greeting parameter"
   default: World
