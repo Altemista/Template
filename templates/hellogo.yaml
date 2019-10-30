@@ -1,0 +1,40 @@
+name: hello-go
+displayName: Hello Go
+
+categories: 
+  - Website
+
+prerequisites:
+  - name: Golang
+    type: software
+    description: Golang binary must be installed
+    link: http://golang.org
+
+version: 0.0.1
+license: MIT
+
+description: Template to generate a sample hello world program in golang.
+longDescription: |
+  This template will generate a Hello World application in golang.
+  
+  By changing the parameter `eventName` it is possible to change the default value `World` to something different, e.g. your name.
+
+  The application itself is an http server listening on port 8080 
+
+repository: 'https://gitlab.com/jrs_nd/hello-go'
+provider: 'NTT Data'
+createdAt: '2019-10-30T00:00:00Z'
+maintainers:
+  - name: 'Jens Renè Suckert'
+    email: Jens Renè Suckert <jensrene.suckert@nttdata.com>
+
+
+image: golang:latest 
+commands:
+  - git clone https://gitlab.com/jrs_nd/hello-go.git .
+  - sed -i 's/{{name}}/'$eventName'/g' main.go
+parameters:
+- name: eventName
+  type: input
+  message: "Who do you want to greet? "
+  default: World
