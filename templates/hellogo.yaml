@@ -54,7 +54,7 @@ maintainers:
 image: golang:latest 
 commands:
   - git clone https://gitlab.com/jrs_nd/hello-go.git .
-  - sed -i 's/{{name}}/'$(echo -ne $eventName)'/g' main.go
+  - sed -i 's/{{name}}/'"$eventName"'/g' main.go
 parameters:
 - name: eventName
   type: input
