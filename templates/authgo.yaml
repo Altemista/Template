@@ -1,5 +1,5 @@
 name: auth-go
-displayName: Authentication with NTT DATA EMEA user
+displayName: Auth in Golang
 
 categories: 
   - Website
@@ -17,7 +17,7 @@ prerequisites:
 version: 0.0.1
 license: MIT
 
-description: Template to generate a sample hello world program in golang.
+description: NTT DATA ADFS Authentication in Golang.
 longDescription: |
   This component provides a SAML based authentication handler connecting to the
   NTT DATA EMEA Active Directory via ADFS. For testing the SAML authentication
