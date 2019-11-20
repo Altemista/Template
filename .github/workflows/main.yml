@@ -1,0 +1,13 @@
+name: CI
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  update-portal:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Call webhook
+      run: curl -X POST https://testdev.altemista.cloud/api/webhook
