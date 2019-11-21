@@ -1,6 +1,9 @@
 name: spring
-categories: scafolding
-description: brick to create a new project based on quarkus
+displayName: Spring Template
+
+categories: 
+- scafolding
+
 prerequisites:
 - name: Java
   type: software
@@ -10,6 +13,18 @@ prerequisites:
   type: software
   description: Maven Engine must be installed
   link: http://maven.com
+  
+description: brick to create a new project based on quarkus
+longDescription: |
+  This template will prepare a spring project
+
+repository: 'https://git.altemista.cloud/altemista/altemista2/dev-portal'
+provider: 'Everis'
+createdAt: '2019-11-21T00:00:00Z'
+maintainers:
+  - name: 'Everis'
+    email: Alberto Cortes Cabello <alberto.cortes.cabello@everis.com>
+
 commands: 
 - git clone https://github.com/acortcab/spring-test.git $name
 - cd $name
