@@ -28,7 +28,7 @@ maintainers:
     email: Alberto Cortes Cabello <alberto.cortes.cabello@everis.com>
 
 commands: 
-- mvn tsf:boot -DgroupId=$groupId -DartifactId=$artifactId -DterasolunaPlusVersion=$terasolunaPlusVersion -Dversion=$version -DappShortId=$appShortId -s C:\terasoluna-plus\apache-maven-3.3.9\conf\settings.xml
+- mvn tsf:boot -DgroupId=$groupId -DartifactId=$artifactId -DterasolunaPlusVersion=$terasolunaPlusVersion -Dversion=$version -DappShortId=$appShortId -s /usr/share/maven/conf/settingsTSF.xml
 parameters:
 - type: input
   name: artifactId
