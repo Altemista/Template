@@ -11,3 +11,10 @@ jobs:
     steps:
     - name: Call webhook
       run: curl -X POST https://testdev.altemista.cloud/api/webhook
+      # TODO: Search for a better way to update all nodes behind load balancer ...
+    - name: Call webhook
+      run: curl -X POST https://testdev.altemista.cloud/api/webhook
+    - name: Call webhook
+      run: curl -X POST https://testdev.altemista.cloud/api/webhook
+    - name: Call webhook
+      run: curl -X POST https://testdev.altemista.cloud/api/webhook
