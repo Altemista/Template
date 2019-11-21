@@ -1,0 +1,21 @@
+name: spring
+categories: scafolding
+description: brick to create a new project based on quarkus
+prerequisites:
+- name: Java
+  type: software
+  description: Java JDK must be installed
+  link: http://oracle.com
+- name: Maven
+  type: software
+  description: Maven Engine must be installed
+  link: http://maven.com
+commands: 
+- git clone https://github.com/acortcab/spring-test.git $name
+- cd $name
+- rm -r .git
+parameters:
+- type: input
+  name: name
+  message: name of the Spring boot project
+  default: my-project
