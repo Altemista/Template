@@ -34,3 +34,5 @@ parameters:
   name: name
   message: name of the Spring boot project
   default: my-project
+
+version: 0.0.1
