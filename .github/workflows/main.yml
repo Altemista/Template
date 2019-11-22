@@ -6,6 +6,11 @@ on:
       - master
 
 jobs:
+  validate-templates:
+    runs-on: altemista/dev-portal:latest 
+    steps:
+      - name: Validate 
+        run: for i in templates/* ; do /usr/src/app/server/scripts/parser $i ; done
   update-portal:
     runs-on: ubuntu-latest
     steps:
