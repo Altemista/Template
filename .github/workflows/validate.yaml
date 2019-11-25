@@ -1,0 +1,16 @@
+name: Validate templates
+on: [push]
+
+jobs:
+  validate-templates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: docker pull altemista/dev-portal:latest
+      - name: Validate templates
+        shell: bash
+        run: |
+          for i in $(ls $PWD/templates) ; do 
+            echo $i ; 
+            docker run -v $(pwd)/templates:/tmp/templates altemista/dev-portal:latest /usr/src/app/server/scripts/parser /tmp/templates/$i ; 
+          done 
