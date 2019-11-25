@@ -12,17 +12,17 @@ Templates (or *bricks*) are YAML files that specify the asset requirements and p
 | **name**          | String                | The name of the template.                                |
 | **categories**    | Array of Strings      | The category to which the template belongs.              |
 | **description**   | String                | A short description of the purpose of the template.      |
-| **prerequisites** | Array of Dictionaries | (Optional) List of the template's asset requirements                |
 | **version**       | VersionString         | The version number of the template.                      |
+| **commands**      | Array of Strings      | List of commands that are sequentially executed in a docker image. |
+| **provider**      | String                | Name of natural person or organization responsible for the template. |
+| **prerequisites** | Array of Dictionaries | (Optional) List of the template's asset requirements                |
 | **license**       | String                | (Optional) Name of the license used for the template.               |
 | **parameters**    | Array of Dictionaries | (Optional) The parameters for customizing the scaffolding process.  |
 | **image**         | String                | (Optional) Name of a docker image, in which commands are executed.  |
-| **commands**      | Array of Strings      | List of commands that are sequentially executed in a docker image. |
 | **longDescription** | String              | (Optional) Markdown formated string, serving as description on the dev portal. |
 | **displayName** | String | (Optional) Name shown on the developer portal. |
 | **repository** | String | (Optional) Link for further information. |
 | **icon** | Array of Dictionaries | (Optional) Containing base64 decoded icon data. |
-| **provider** | String | Name of natural person or organization responsible for the template. |
 | **maintainers** | Array of Dictionaries | (Optional) List of names and email addresses of people maintaining this template. |
 | **links** | Array of Dictionaries | (Optional) Array of Strings | List of links for further information. |
 | **createdAt** | String | (Optional) Datestring of creation, e.g. `2019-08-26T00:00:00Z`. |
