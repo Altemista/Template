@@ -1,10 +1,8 @@
-name: CI
-
+name: Update Portal
 on: 
   push:
     branches: 
       - master
-
 jobs:
   update-portal:
     runs-on: ubuntu-latest
