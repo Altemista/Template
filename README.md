@@ -10,23 +10,24 @@ Templates (or *bricks*) are YAML files that specify the asset requirements and p
 | Field Name        | Type                  | Description                                              |
 | ----------------- | --------------------- | -------------------------------------------------------- |
 | **name**          | String                | The name of the template.                                |
+| **type**          | String                | Type of the template, e.g. scafolding                    |
 | **categories**    | Array of Strings      | The category to which the template belongs.              |
 | **description**   | String                | A short description of the purpose of the template.      |
 | **version**       | VersionString         | The version number of the template.                      |
 | **commands**      | Array of Strings      | List of commands that are sequentially executed in a docker image. |
 | **provider**      | String                | Name of natural person or organization responsible for the template. |
 | **prerequisites** | Array of Dictionaries | (Optional) List of the template's asset requirements                |
-| **license**       | String                | (Optional) Name of the license used for the template.               |
+| **license**       | String                | (Optional, portal only) Name of the license used for the template.               |
 | **parameters**    | Array of Dictionaries | (Optional) The parameters for customizing the scaffolding process.  |
 | **image**         | String                | (Optional) Name of a docker image, in which commands are executed.  |
-| **longDescription** | String              | (Optional) Markdown formated string, serving as description on the dev portal. |
-| **displayName** | String | (Optional) Name shown on the developer portal. |
-| **repository** | String | (Optional) Link for further information. |
-| **icon** | Array of Dictionaries | (Optional) Containing base64 decoded icon data. |
-| **maintainers** | Array of Dictionaries | (Optional) List of names and email addresses of people maintaining this template. |
-| **links** | Array of Dictionaries | (Optional) Array of Strings | List of links for further information. |
-| **createdAt** | String | (Optional) Datestring of creation, e.g. `2019-08-26T00:00:00Z`. |
-| **replaces** | String | (Optional) Older version number that is replaced by this template. |
+| **longDescription** | String              | (Optional, portal only) Markdown formated string, serving as description on the dev portal. |
+| **displayName** | String | (Optional, portal only) Name shown on the developer portal. |
+| **repository** | String | (Optional, portal only) Link for further information. |
+| **icon** | Array of Dictionaries | (Optional, portal only) Containing base64 decoded icon data. |
+| **maintainers** | Array of Dictionaries | (Optional, portal only) List of names and email addresses of people maintaining this template. |
+| **links** | Array of Dictionaries | (Optional, portal only) Array of Strings | List of links for further information. |
+| **createdAt** | String | (Optional, portal only) Datestring of creation, e.g. `2019-08-26T00:00:00Z`. |
+| **replaces** | String | (Optional, portal only) Older version number that is replaced by this template. |
 
 ### Prerequisite Definition 
 
