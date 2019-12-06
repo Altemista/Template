@@ -1,5 +1,6 @@
 name: auth-go
 displayName: Auth in Golang
+type: scafolding
 
 categories: 
   - Website

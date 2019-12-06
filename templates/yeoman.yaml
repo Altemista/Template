@@ -1,5 +1,6 @@
 name: yeoman
 displayName: Yeoman
+type: scafolding
 
 categories: 
   - Project Management
