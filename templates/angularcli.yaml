@@ -1,5 +1,6 @@
 name: angular-cli
 displayName: Angular CLI
+type: scafolding
 
 categories: 
   - Command Line

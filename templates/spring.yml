@@ -1,8 +1,9 @@
 name: spring
 displayName: Spring Template
+type: scafolding
 
 categories: 
-- scafolding
+- Application
 
 prerequisites:
 - name: Java
