@@ -13,6 +13,7 @@ prerequisites:
 
 version: 0.0.1
 license: MIT
+channel: https://mm.nttdata-labs.com/HelloGoChannel
 
 description: Template to generate a sample hello world program in golang.
 longDescription: |
