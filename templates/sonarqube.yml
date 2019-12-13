@@ -1,0 +1,55 @@
+name: sonarqube
+displayName: Sonarqube
+type: Performing
+
+categories: 
+- Performing
+
+requires:
+- java
+
+prerequisites:
+- name: Java
+  type: software
+  description: Java JDK must be installed
+  link: http://oracle.com
+- name: Maven
+  type: software
+  description: Maven Engine must be installed
+  link: http://maven.com
+
+description: brick to add sonarqube to java projects
+
+longDescription: |
+  This template will add sonarqube to your pom.xml
+  
+repository: 'https://git.altemista.cloud/altemista/altemista2/dev-portal'
+provider: 'Everis'
+createdAt: '2019-12-13T00:00:00Z'
+maintainers:
+  - name: 'Everis'
+    email: Alberto Cortes Cabello <alberto.cortes.cabello@everis.com>
+    
+commands: 
+- sed  '/<dependencyManagement/i \\n\t<build>\n\t\t<pluginManagement>\n\t\t\t<plugins>\n\t\t\t\t<plugin>\n\t\t\t\t\t<groupId>org.sonarsource.scanner.maven</groupId>\n\t\t\t\t\t<artifactId>sonar-maven-plugin</artifactId>\n\t\t\t\t\t<version>3.6.0.1398</version>\n\t\t\t\t</plugin>\n\t\t\t</plugins>\n\t\t</pluginManagement>\n\t\</build>' $project/pom.xml >> $project/pom2.xml
+- rm $project/pom.xml
+- mv $project/pom2.xml $project/pom.xml
+- sed  '/<properties/a \\n\t\t<sonar.host.url>$server</sonar.host.url>\n\t\t<sonar.login>$token</sonar.login>' $project/pom.xml >> $project/pom2.xml
+- rm $project/pom.xml
+- mv $project/pom2.xml $project/pom.xml
+parameters:
+- type: input
+  name: project
+  message: project Name
+  default: my-project
+- type: input
+  name: server
+  message: server host
+  default: http://localhost:9000  
+- type: input
+  name: token
+  message: token
+  default: XXXXXXXXXXXXXXXXX
+
+version: 0.0.1
+license: MIT
