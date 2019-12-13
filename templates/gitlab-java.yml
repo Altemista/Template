@@ -1,7 +1,7 @@
 name: gitlab-java
-displayName: CI-CD for gitlab
-type: ci-cd
-categories: ci-cd
+displayName: CI CD for gitlab
+type: ci cd
+categories: ci cd
 requires: java
 prerequisites:
 - name: Java
@@ -12,9 +12,9 @@ prerequisites:
   type: software
   description: Maven Engine must be installed
   link: http://maven.com
-description: brick to add ci-cd
+description: brick to add ci cd
 longDescription: |
-  This template will add yaml file to add to your gitlabe repository allowing ci-cd
+  This template will add yaml file to add to your gitlabe repository allowing ci cd
 repository: 'https://git.altemista.cloud/altemista/altemista2/dev-portal'
 provider: 'Everis'
 createdAt: '2019-11-21T00:00:00Z'
