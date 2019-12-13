@@ -1,0 +1,38 @@
+name: gitlab-java
+displayName: CI/CD for gitlab
+type: ci/cd
+categories: ci/cd
+requires: java
+prerequisites:
+- name: Java
+  type: software
+  description: Java JDK must be installed
+  link: http://oracle.com
+- name: Maven
+  type: software
+  description: Maven Engine must be installed
+  link: http://maven.com
+description: brick to add ci/cd
+longDescription: |
+  This template will add yaml file to add to your gitlabe repository allowing ci/cd
+repository: 'https://git.altemista.cloud/altemista/altemista2/dev-portal'
+provider: 'Everis'
+createdAt: '2019-11-21T00:00:00Z'
+maintainers:
+  - name: 'Everis'
+    email: Alberto Cortes Cabello <alberto.cortes.cabello@everis.com>  
+commands: 
+- git clone https://github.com/acortcab/gitlab-java.git gitlab-java
+- cd gitlab-java
+- rm -r .git
+- cp -a /tmp/gitlab-java/. /tmp
+- cd ..
+- rm -r gitlab-java
+parameters:
+- type: input
+  name: name
+  message: name of the Spring boot project
+  default: my-project
+  
+version: 0.0.1
+license: MIT
