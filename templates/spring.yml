@@ -5,6 +5,9 @@ type: scafolding
 categories: 
 - Application
 
+provides:
+- java
+
 prerequisites:
 - name: Java
   type: software
