@@ -3,7 +3,8 @@ displayName: CI/CD for gitlab
 type: ci/cd
 categories: 
 - ci/cd
-requires: java
+requires: 
+- java
 prerequisites:
 - name: Java
   type: software
