@@ -14,12 +14,14 @@ Templates (or *bricks*) are YAML files that specify the asset requirements and p
 | **categories**    | Array of Strings      | The category to which the template belongs.              |
 | **description**   | String                | A short description of the purpose of the template.      |
 | **version**       | VersionString         | The version number of the template.                      |
-| **commands**      | Array of Strings      | List of commands that are sequentially executed in a docker image. |
-| **provider**      | String                | Name of natural person or organization responsible for the template. |
-| **prerequisites** | Array of Dictionaries | (Optional) List of the template's asset requirements                |
-| **license**       | String                | (Optional, portal only) Name of the license used for the template.               |
-| **parameters**    | Array of Dictionaries | (Optional) The parameters for customizing the scaffolding process.  |
-| **image**         | String                | (Optional) Name of a docker image, in which commands are executed.  |
+| **commands**      | Array of Strings      | List of commands that are sequentially executed in a docker image.        |
+| **provider**      | String                | Name of natural person or organization responsible for the template.      |
+| **prerequisites** | Array of Dictionaries | (Optional) List of the template's asset requirements                      |
+| **license**       | String                | (Optional, portal only) Name of the license used for the template.        |
+| **parameters**    | Array of Dictionaries | (Optional) The parameters for customizing the scaffolding process.        |
+| **image**         | String                | (Optional) Name of a docker image, in which commands are executed.        |
+| **requires**      | Array of Strings      | (Optional) List of properties required to be present to use this template | 
+| **provides**      | Array of Strings      | (Optional) List of properties provided by this template. |
 | **longDescription** | String              | (Optional, portal only) Markdown formated string, serving as description on the dev portal. |
 | **displayName** | String | (Optional, portal only) Name shown on the developer portal. |
 | **repository** | String | (Optional, portal only) Link for further information. |
