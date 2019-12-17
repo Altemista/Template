@@ -1,6 +1,8 @@
 name: angular-cli
 displayName: Angular CLI
 type: scafolding
+provides:
+- angular
 
 categories: 
   - Command Line
