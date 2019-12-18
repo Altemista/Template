@@ -1,6 +1,6 @@
 name: tsf
 displayName: Team Foundation Server
-type: scafolding
+type: base
 
 categories: 
   - Project Management

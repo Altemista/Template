@@ -1,6 +1,6 @@
 name: hello-go
 displayName: Hello World in Golang
-type: scafolding
+type: base
 
 categories: 
   - Website

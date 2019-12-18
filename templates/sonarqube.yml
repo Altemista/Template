@@ -1,6 +1,6 @@
 name: sonarqube
 displayName: Sonarqube
-type: Performing
+type: extension
 
 categories: 
 - Performing

@@ -1,6 +1,6 @@
 name: angular-cli
 displayName: Angular CLI
-type: scafolding
+type: base
 provides:
 - angular
 

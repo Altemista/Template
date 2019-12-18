@@ -1,6 +1,6 @@
 name: auth-go
 displayName: Auth in Golang
-type: scafolding
+type: base
 
 categories: 
   - Website
@@ -25,7 +25,7 @@ longDescription: |
   can be replaced by basic or even no authentication.
 
 repository: 'https://git.altemista.cloud/enso/confluence-cms'
-provider: 'NTT DATA'
+provider: 'NTT Data'
 createdAt: '2019-10-30T00:00:00Z'
 maintainers:
   - name: 'Oliver Koeth'
