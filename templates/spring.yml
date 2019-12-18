@@ -1,6 +1,6 @@
 name: spring
 displayName: Spring Template
-type: scafolding
+type: base
 
 categories: 
 - Application

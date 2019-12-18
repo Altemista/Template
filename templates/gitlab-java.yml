@@ -1,6 +1,6 @@
 name: gitlab-java
 displayName: CI/CD for gitlab
-type: ci/cd
+type: extension
 categories: 
 - ci/cd
 requires: 

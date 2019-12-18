@@ -1,6 +1,6 @@
 name: quarkus
 displayName: Quarkus Template
-type: scafolding
+type: base
 
 categories: 
   - Website
