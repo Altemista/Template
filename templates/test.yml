@@ -1,0 +1,70 @@
+name: test
+displayName: Hello World in Golang
+type: base
+
+categories: 
+  - Website
+
+prerequisites:
+  - name: Golang
+    type: software
+    description: Golang binary must be installed
+    link: http://golang.org
+
+version: 0.0.1
+license: MIT
+channel: https://mm.nttdata-labs.com/HelloGoChannel
+
+description: Template to generate a sample hello world program in golang.
+longDescription: |
+  This template will generate a Hello World application in golang.
+  
+  By changing the parameter `eventName` it is possible to change the default value `World` to something different, e.g. your name.
+
+  The application itself is an http server listening on port 8080 
+
+  ```golang
+    package main
+
+    import (
+      "fmt"
+      "log"
+      "net/http"
+    )
+
+    func sayHello(w http.ResponseWriter, r *http.Request) {
+      log.Print("Received request.")
+      fmt.Fprintf(w, "Hello, {{name}}\n")
+    }
+
+    func main() {
+      http.HandleFunc("/", sayHello)
+      if err := http.ListenAndServe(":8080", nil); err != nil {
+        panic(err)
+      }
+    }
+  ```
+
+repository: 'https://gitlab.com/jrs_nd/hello-go'
+provider: 'NTT Data'
+createdAt: '2019-10-30T00:00:00Z'
+maintainers:
+  - name: 'Jens Renè Suckert'
+    email: Jens Renè Suckert <jensrene.suckert@nttdata.com>
+
+
+image: golang:latest 
+commands:
+  - git clone https://gitlab.com/jrs_nd/hello-go.git .
+  - sed -i 's/{{name}}/'"$eventName"'/g' main.go
+parameters:
+- name: eventName
+  type: input
+  message: "Greeting parameter"
+  default: World
+  tooltip: Parameter to replace the default 'World' in 'Hello World!'
+  url: https://go.dev
+
+icon:
+- base64data: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkdvcGhlciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDIxNS42IDI4MS42IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyMTUuNiAyODEuNiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZmlsbD0iIzhDQzVFNyIgZD0iTTIwNy4zLDQ0LjZjLTYuNy0xMy43LTIyLjktMS42LTI3LTUuOWMtMjEtMjEuNi00Ni40LTI3LTY2LjMtMjhjMCwwLTksMC0xMSwwYy0yMCwwLjUtNDUuNCw2LjMtNjYuMywyOAoJCWMtNC4xLDQuMy0yMC40LTcuOC0yNyw1LjljLTcuNywxNiwxNS43LDE3LjYsMTQuNSwyNC43Yy0yLjMsMTIuOC0wLjgsMzEuOCwxLDUwLjVDMjgsMTUxLjUsNC4zLDIyNy40LDUzLjYsMjU3LjkKCQljOS4zLDUuOCwzNC40LDksNTYuMiw5LjVsMCwwYzAsMCwwLjEsMCwwLjEsMGMwLDAsMC4xLDAsMC4xLDBsMCwwYzIxLjgtMC41LDQzLjktMy43LDUzLjItOS41YzQ5LjQtMzAuNSwyNS43LTEwNi40LDI4LjYtMTM4LjEKCQljMS43LTE4LjcsMy4yLTM3LjcsMS01MC41QzE5MS42LDYyLjIsMjE1LDYwLjUsMjA3LjMsNDQuNnoiLz4KCTxnPgoJCTxwYXRoIGZpbGw9IiNFMERFREMiIGQ9Ik0xNDMuMiw1NC4zYy0zMy40LDMuOS0yOC45LDM4LjctMTYsNTBjMjQsMjEsNDksMCw0Ni4yLTIxLjJDMTcwLjksNjIuNywxNTMuNiw1My4xLDE0My4yLDU0LjN6Ii8+CgkJPGNpcmNsZSBmaWxsPSIjMTExMjEyIiBjeD0iMTQ1LjUiIGN5PSI4NC4zIiByPSIxMS40Ii8+CgkJPGNpcmNsZSBmaWxsPSIjRkZGRkZGIiBjeD0iMTQyLjUiIGN5PSI3OS40IiByPSIzLjYiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIGZpbGw9IiNCODkzN0YiIGQ9Ik0xMDguNSwxMDdjLTE2LDIuNC0yMS43LDctMjAuNSwxNC4yYzIsMTEuOCwzOS43LDEwLjUsNDAuOSwwLjZDMTI5LjksMTEzLjMsMTE0LjgsMTA2LjEsMTA4LjUsMTA3eiIvPgoJCTxwYXRoIGQ9Ik05OC4yLDExMS44Yy0yLjcsOS44LDIxLjcsOC4zLDIxLjEsMmMtMC4zLTMuNy0zLjYtOC40LTEyLjMtOC4yQzEwMy42LDEwNS43LDk5LjQsMTA3LjIsOTguMiwxMTEuOHoiLz4KCQk8cGF0aCBmaWxsPSIjRTBERURDIiBkPSJNOTksMTI3LjdjLTAuOSwwLjQtMi40LDEwLjIsMi4yLDEwLjdjMy4xLDAuMywxMS42LDEuMywxMy42LDBjMy45LTIuNSwzLjUtOC41LDEuMy0xMAoJCQlDMTEyLjQsMTI2LDEwMCwxMjcuMiw5OSwxMjcuN3oiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIGZpbGw9IiNFMERFREMiIGQ9Ik03My42LDU0LjNjMzMuNCwzLjksMjguOSwzOC43LDE2LDUwYy0yNCwyMS00OSwwLTQ2LjItMjEuMkM0Niw2Mi43LDYzLjMsNTMuMSw3My42LDU0LjN6Ii8+CgkJPGNpcmNsZSBmaWxsPSIjMTExMjEyIiBjeD0iNzEuNCIgY3k9Ijg0LjMiIHI9IjExLjQiLz4KCQk8Y2lyY2xlIGZpbGw9IiNGRkZGRkYiIGN4PSI3NC40IiBjeT0iNzkuNCIgcj0iMy42Ii8+Cgk8L2c+Cgk8cGF0aCBmaWxsPSIjQjg5MzdGIiBkPSJNMTkzLjYsMTg2LjdjMTEsMC4xLDUuNi0yMy41LTEuMi0xOC44Yy0zLjMsMi4zLTMuOSw3LjYtMy45LDEyLjFDMTg4LjUsMTgyLjUsMTkwLjUsMTg2LjYsMTkzLjYsMTg2Ljd6Ii8+Cgk8cGF0aCBmaWxsPSIjQjg5MzdGIiBkPSJNMjMuMywxODYuN2MtMTEsMC4xLTUuNi0yMy41LDEuMi0xOC44YzMuMywyLjMsMy45LDcuNiwzLjksMTIuMUMyOC40LDE4Mi41LDI2LjQsMTg2LjYsMjMuMywxODYuN3oiLz4KCTxwYXRoIGZpbGw9IiNCODkzN0YiIGQ9Ik0xNzIuNywyNTkuMmMtNi04LjktMTEuNC0yLTIwLjEsMi40Yy00LjEsMi4xLDYuOCw5LjYsMTksNEMxNzQuOCwyNjQuMSwxNzQuNywyNjIuMSwxNzIuNywyNTkuMnoiLz4KCTxwYXRoIGZpbGw9IiNCODkzN0YiIGQ9Ik00NC4yLDI2MC4yYzYtOC45LDExLjQtMiwyMC4xLDIuNGM0LjEsMi4xLTYuOCw5LjYtMTksNEM0Mi4xLDI2NS4xLDQyLjIsMjYzLjEsNDQuMiwyNjAuMnoiLz4KCTxwYXRoIGZpbGw9IiMzQzg5QkYiIGQ9Ik0xODguNiw0N2MtMC42LDIuMSwyLjEsMS44LDMuMSw4LjNjMC40LDIuNCw5LTMuNSw1LjUtNy44QzE5NC4zLDQzLjksMTg5LjEsNDQuOSwxODguNiw0N3oiLz4KCTxwYXRoIGZpbGw9IiMzQzg5QkYiIGQ9Ik0yOC4zLDQ3YzAuNiwyLjEtMi4xLDEuOC0zLjEsOC4zYy0wLjQsMi40LTktMy41LTUuNS03LjhDMjIuNSw0My45LDI3LjcsNDQuOSwyOC4zLDQ3eiIvPgo8L2c+Cjwvc3ZnPg==
+  mediatype: image/svg+xml
