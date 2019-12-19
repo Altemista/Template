@@ -2,7 +2,7 @@ name: Update Portal
 on: 
   push:
     branches: 
-      - master
+      - testing
 jobs:
   update-portal:
     runs-on: ubuntu-latest
