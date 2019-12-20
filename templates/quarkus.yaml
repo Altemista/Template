@@ -41,8 +41,7 @@ maintainers:
 image: maven:3.6.2-jdk-8
 # Do we need the command key for each command?
 commands:
-- mvn io.quarkus:quarkus-maven-plugin:0.19.1:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DclassName=$className -Dpath=$path &&
-# - mvn io.quarkus:quarkus-maven-plugin:0.19.1:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DclassName=$className -Dpath=$path &&
+- mvn io.quarkus:quarkus-maven-plugin:0.19.1:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DclassName=$className -Dpath=$path
 
 parameters:
 - name: groupId
