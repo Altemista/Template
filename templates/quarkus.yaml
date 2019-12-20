@@ -41,8 +41,7 @@ maintainers:
 image: maven:3.6.2-jdk-8
 # Do we need the command key for each command?
 commands:
-- mvn io.quarkus:quarkus-maven-plugin:0.19.1:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DclassName=$className -Dpath=$path &&
-# - mvn io.quarkus:quarkus-maven-plugin:0.19.1:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DclassName=$className -Dpath=$path &&
+- mvn io.quarkus:quarkus-maven-plugin:0.19.1:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DclassName=$className -Dpath=$path
 
 parameters:
 - name: groupId
@@ -52,7 +51,7 @@ parameters:
 - type: list
   name: version
   message: Which java version do you want to use?
-  choices: [1.5.0-SNAPSHOT,1.4.0-SNAPSHOT] 
+  choices: [7.0,8.0,11] 
 - name: artifactId
   type: input
   message: Artifact id for creating the artifact
