@@ -1,4 +1,4 @@
-name: hello-go
+name: hello-go-demo
 displayName: Hello World in Golang
 type: base
 
