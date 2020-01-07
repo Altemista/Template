@@ -62,5 +62,7 @@ links:
   - name: devPortal
     URL: http://dev.altemista.cloud
 
-requires: "<requiredProperties>"  # Optional
-provides: "<providedProperties>"  # Optional
+requires: # Optional 
+  - "<requiredProperties>"  
+provides: # Optional
+  - "<providedProperties>"  
