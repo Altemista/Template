@@ -10,7 +10,7 @@ license: None
 channel: https://mm.nttdata-labs.com/PipelineChannel
 
 description: Template to generate a Pipeline 
-long description: |
+longDescription: |
   This template will generate a Pipeline for your project.
 
   By changing the parameter `pipeline` it is possible to change the default value `None` to Gitlab or Jenkins.  
