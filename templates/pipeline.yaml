@@ -1,0 +1,31 @@
+name: pipeline
+displayName: Create a Pipeline for your project
+type: base
+
+categories:
+  - Pipeline
+
+version: 0.0.1
+license: None
+channel: https://mm.nttdata-labs.com/PipelineChannel
+
+description: Template to generate a Pipeline 
+long description: |
+  This template will generate a Pipeline for your project.
+
+  By changing the parameter `pipeline` it is possible to change the default value `None` to Gitlab or Jenkins.  
+|
+
+provider: 'NTT Data'
+createdAt: '2019-01-07T00:00:00Z'
+maintainers:
+  - name: 'Fabian Meyer'
+    email: Fabian Meyer <fabian.meyer@nttdata.com>
+
+parameters:
+  - name: pipeline
+    type: list
+    message: "Select Provider"
+    choices: ["None", "Gitlab", "Jenkins"]
+    tooltip: Choose a provider, where your pipeline should run
+
