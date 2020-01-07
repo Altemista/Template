@@ -13,8 +13,7 @@ description: Template to generate a Pipeline
 longDescription: |
   This template will generate a Pipeline for your project.
 
-  By changing the parameter `pipeline` it is possible to change the default value `None` to Gitlab or Jenkins.  
-|
+  By changing the parameter `pipeline` it is possible to change the default value `None` to Gitlab or Jenkins.
 
 provider: 'NTT Data'
 createdAt: '2019-01-07T00:00:00Z'
