@@ -1,30 +1,68 @@
-name: pipeline
-displayName: Create a Pipeline for your project
-type: base
+name: tdk
+namespace: 
+displayName: Template Development Kit (TDK)  # Optional
+type: base # choose between base or extension
 
 categories:
-  - Pipeline
+  - "<MyCategory>"
+
+prerequisites: # Optional
+- name: myPrerequisite
+  type: software # or something else
+  description: myPrerequisite is a software, which install a testDummy
+  link: https://www.giyf.com/ # add a link, where users can find a myPrerequisite Installation Guide
 
 version: 0.0.1
-license: None
-channel: https://mm.nttdata-labs.com/PipelineChannel
+license: MIT # Optional
+channel: "link to a Mattermost Channel for myProject. E.g. https://mm.nttdata-labs.com/tdk"
 
-description: Template to generate a Pipeline 
-longDescription: |
-  This template will generate a Pipeline for your project.
+description: Template that supports you to generate a template 
+longDescription: |  # Optional
+  This template is a Template Development Kit and will show you all possible parameters you can change.
 
-  By changing the parameter `pipeline` it is possible to change the default value `None` to Gitlab or Jenkins.
+  The longDescription should explain in detail what the template intends.
 
+  The more detailed the explanation is, the easier the users can migrate the template into their project.
+
+repository: "<Link to myRepository>"  # Optional
 provider: 'NTT Data'
-createdAt: '2019-01-07T00:00:00Z'
-maintainers:
-  - name: 'Fabian Meyer'
-    email: Fabian Meyer <fabian.meyer@nttdata.com>
+createdAt: '2020-01-07T00:00:00Z'  # Optional
+maintainers:  # Optional
+  - name: 'myName'
+    email: myName <my.name@nttdata.com>
 
-parameters:
+image: "<docker:image>" # Optional
+commands: 
+  - git clone myRepositoryUrl.git
+  - rm -rf .git
+  - echo $pipeline
+  - echo $output
+
+parameters: # Optional
+# Choose between type list and input
+# You can see the syntaxes of them in the following steps
   - name: pipeline
     type: list
-    message: "Select Provider"
-    choices: ["None", "Gitlab", "Jenkins"]
-    tooltip: Choose a provider, where your pipeline should run
+    message: "Select CI/CD"
+    choices: ["None", "Gitlab", "Jenkins"] # first value of list is default
+    tooltip: Insert a tooltip here to give more information about the parameter
+    url: http://dev.altemista.cloud # url for further information in the tooltip
+  - name: output
+    type: input
+    message: "Insert your output here"
+    default: "Hello"
+    tooltip: Here could be your tooltip
+    url: http://dev.altemista.cloud # url for further information in the tooltip
 
+icon:  # Optional
+  - base64data: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAsIDAsIDI0LCAyNCI+CiAgPGcgaWQ9InNldHRpbmdzIiBvcGFjaXR5PSIwLjc1Ij4KICAgIDxwYXRoIGQ9Ik0zLDQgTDYsNCBMNiw2IEwzLDYgeiIgZmlsbD0iIzAwMDAwMCIvPgogICAgPHBhdGggZD0iTTEyLDQgTDIxLDQgTDIxLDYgTDEyLDYgeiIgZmlsbD0iIzAwMDAwMCIvPgogICAgPHBhdGggZD0iTTgsMyBMMTAsMyBDMTAuNTUyLDMgMTEsMy40NDggMTEsNCBMMTEsNiBDMTEsNi41NTIgMTAuNTUyLDcgMTAsNyBMOCw3IEM3LjQ0OCw3IDcsNi41NTIgNyw2IEw3LDQgQzcsMy40NDggNy40NDgsMyA4LDMgeiIgZmlsbD0iIzAwMDAwMCIvPgogICAgPHBhdGggZD0iTTMsMTEgTDEyLDExIEwxMiwxMyBMMywxMyB6IiBmaWxsPSIjMDAwMDAwIi8+CiAgICA8cGF0aCBkPSJNMTgsMTEgTDIxLDExIEwyMSwxMyBMMTgsMTMgeiIgZmlsbD0iIzAwMDAwMCIvPgogICAgPHBhdGggZD0iTTE0LDEwIEwxNiwxMCBDMTYuNTUyLDEwIDE3LDEwLjQ0OCAxNywxMSBMMTcsMTMgQzE3LDEzLjU1MiAxNi41NTIsMTQgMTYsMTQgTDE0LDE0IEMxMy40NDgsMTQgMTMsMTMuNTUyIDEzLDEzIEwxMywxMSBDMTMsMTAuNDQ4IDEzLjQ0OCwxMCAxNCwxMCB6IiBmaWxsPSIjMDAwMDAwIi8+CiAgICA8cGF0aCBkPSJNMywxOCBMOSwxOCBMOSwyMCBMMywyMCB6IiBmaWxsPSIjMDAwMDAwIi8+CiAgICA8cGF0aCBkPSJNMTUsMTggTDIxLDE4IEwyMSwyMCBMMTUsMjAgeiIgZmlsbD0iIzAwMDAwMCIvPgogICAgPHBhdGggZD0iTTExLDE3IEwxMywxNyBDMTMuNTUyLDE3IDE0LDE3LjQ0OCAxNCwxOCBMMTQsMjAgQzE0LDIwLjU1MiAxMy41NTIsMjEgMTMsMjEgTDExLDIxIEMxMC40NDgsMjEgMTAsMjAuNTUyIDEwLDIwIEwxMCwxOCBDMTAsMTcuNDQ4IDEwLjQ0OCwxNyAxMSwxNyB6IiBmaWxsPSIjMDAwMDAwIi8+CiAgPC9nPgogIDxkZWZzLz4KPC9zdmc+Cg==
+    mediatype: image/svg+xml
+
+links:
+  - name: devPortal
+    URL: http://dev.altemista.cloud
+
+requires: # Optional 
+  - "<requiredProperties>"  
+provides: # Optional
+  - "<providedProperties>"  
