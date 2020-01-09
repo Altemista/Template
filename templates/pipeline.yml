@@ -43,7 +43,7 @@ commands:
   - if [ "$pipeline" == 'Github' ]; then rm -rf gitlab-ci.yml Jenkinsfile; fi
   - if [ "$pipeline" == 'Jenkins' ]; then rm -rf gitlab-ci.yml travis.yml; fi
   
-parameter:
+parameters:
 - name: eventName
   type: input
   message: "Greeting parameter"
