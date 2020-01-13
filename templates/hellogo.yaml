@@ -19,29 +19,16 @@ prerequisites:
 description: Template to generate a sample hello world program in a pipeline.
 longDescription: |
   This template will generate a Hello World application in golang. 
-    
+
   Additional you can build a Pipeline for your preferred CI/CD Tool.
 
-  You can choose between
+  You can choose between:
+  | None | Gitlab | Jenkins | Travis CI |
+  | -- | -- | -- | -- |
+  | | ![D](https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/2000px-GitLab_Logo.svg.png =50x50 ) | ![D](https://wiki.jenkins.io/download/attachments/2916393/headshot.png?version=1&modificationDate=1302753947000&api=v2 =50x50 ) | ![D](https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg =50x50) |
 
-  <html>
-    <table>
-      <tr>
-        <th>None</th>
-        <th>Gitlab</th>
-        <th>Jenkins</th>
-        <th>Travis CI</th>
-      </tr>
-      <tr>
-        <td></td>
-        <td>[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/2000px-GitLab_Logo.svg.png" width="50px">]</td>
-        <td>[<img src="https://wiki.jenkins.io/download/attachments/2916393/headshot.png?version=1&modificationDate=1302753947000&api=v2" width="50px">]</td>
-        <td>[![Foo](https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg)]</td>
-      </tr>
-    </table>
-  </html>  
-
-  By changing the parameter `eventName` it is possible to change the default value `Hello-Tokio` to something different, e.g. your name.
+  <p></p>
+  By changing the parameter `eventName` it is possible to change the default value `Hello-Tokyo` to something different, e.g. your name.
 
   The application itself is an http server listening on port 8080 
 
@@ -68,8 +55,8 @@ parameters:
 - name: eventName
   type: input
   message: "Greeting parameter"
-  default: Hello-Tokio
-  tooltip: Parameter to replace the default 'Hello-Tokio' in 'Hello World!'
+  default: Hello-Tokyo
+  tooltip: Parameter to replace the default 'Hello-Tokyo' in 'Hello World!'
   url: https://go.dev
 
 - name: pipeline
