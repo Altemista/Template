@@ -37,9 +37,6 @@ longDescription: >
       <td><img src="https://wiki.jenkins.io/download/attachments/2916393/headshot.png?version=1&modificationDate=1302753947000&api=v2" width="50px"></td>
       <td><img src="https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg" width="50px"></td>
     </tr>
-  #| None | Gitlab | Jenkins | Travis CI |
-  #| ------------- | ------------- |  ------------- |  ------------- |
-  #|  | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/2000px-GitLab_Logo.svg.png" width="50px"> | <img src="https://wiki.jenkins.io/download/attachments/2916393/headshot.png?version=1&modificationDate=1302753947000&api=v2" width="50px"> | <img src="https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg" width="50px"> |
     
   By changing the parameter `eventName` it is possible to change the default value `Hello-Tokio` to something different, e.g. your name.
 
