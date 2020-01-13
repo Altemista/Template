@@ -1,5 +1,5 @@
-name: pipeline
-displayName: Pipeline Development Kit
+name: hello-go
+displayName: Hello World Template
 type: base
 
 categories:
@@ -17,23 +17,31 @@ prerequisites:
     link: http://golang.org
 
 description: Template to generate a sample hello world program in a pipeline.
-longDescription: |
-  This template will generate a yml-file to generate a pipeline.
+longDescription: >
+  This template will generate a Hello World application in golang. 
+    
+  Additional you can build a Pipeline for your preferred CI/CD Tool.
 
-  The pipeline build the project `Hello World in Golang`.
+  You can choose between
 
-  You can choose between `None`, `Gitlab`, `Jenkins` and `Github`.
+  | None | Gitlab | Jenkins | Travis CI |
+  | ------------- | ------------- |  ------------- |  ------------- |
+  |  | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/2000px-GitLab_Logo.svg.png" width="50px"> | <img src="https://wiki.jenkins.io/download/attachments/2916393/headshot.png?version=1&modificationDate=1302753947000&api=v2" width="50px"> | <img src="https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg" width="50px"> |
+    
+  By changing the parameter `eventName` it is possible to change the default value `Hello-Tokio` to something different, e.g. your name.
+
+  The application itself is an http server listening on port 8080 
 
   If you choose one of the additional CI/CDs, you will get the corresponding file in your project folder.
 
   You can execute the corresponding file in your automatisation tool. 
-
+  
 repository: 'https://github.com/Altemista/hello-go'
 provider: 'NTT Data'
-createdAt: '2019-10-30T00:00:00Z'
+createdAt: '2020-01-01T00:00:00Z'
 maintainers:
-  - name: 'Your Name'
-    email: Your Name <your.name@nttdata.com>
+  - name: 'Fabian Meyer'
+    email: Fabian Meyer <fabian.meyer@nttdata.com>
 
 commands:
   - git clone https://github.com/Altemista/hello-go.git && rm -r hello-go/.git
@@ -47,8 +55,8 @@ parameters:
 - name: eventName
   type: input
   message: "Greeting parameter"
-  default: World
-  tooltip: Parameter to replace the default 'World' in 'Hello World!'
+  default: Hello-Tokio
+  tooltip: Parameter to replace the default 'Hello-Tokio' in 'Hello World!'
   url: https://go.dev
 
 - name: pipeline
