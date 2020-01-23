@@ -1,6 +1,9 @@
 # Template
 NextGen DevOps ADF Templates
 
+# Contributing
+For a guide on how to create, test and deploy templates please refer to `DEPLOYMENT.md`
+
 ## Template Specification
 
 Templates (or *bricks*) are YAML files that specify the asset requirements and provide the user with parameters to customize the project scaffolding process.
@@ -49,10 +52,10 @@ Variable informations can be passed to the executable argument in form of a list
 | Field Name       | Type   | Description                                                  |
 | ---------------- | ------ | ------------------------------------------------------------ |
 | **name**         | String | The name of the parameter.                                   |
-| **type**         | String | Type of the parameter, `input` or `list`.                        |
-| **message**      | String | Short description of the parameter, (optionally) presented to the user in the UI. |
-| **defaultValue** | String | The default value of the parameter, autofilled in the UI. Only if type == input.  |
-| **choices**      | Array of Strings | List of options to choose from. Only if type == list. |
+| **type**         | String | Type o  f the parameter, `input` or `list`.                        |
+| **message**      | String | Short   description of the parameter, (optionally) presented to the user in the UI. |
+| **defaultValue** | String | The de  fault value of the parameter, autofilled in the UI. Only if type == input.  |
+| **choices**      | Array of String  s | List of options to choose from. Only if type == list. |
 
 ### Icon Definition 
 
