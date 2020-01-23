@@ -28,7 +28,14 @@ curl -XPOST localhost:8080/api/webhook
 >3. Validate the results.
 >4. If any errors occur, fix them and update your template accordingly. Go back to step one.
 
+## Stage your template
+When everything looks and works as expected you can open a pull request to `testing`.
+
+**TODO** If the template is valid, the merge will be accepted automatically and be published in the test environment of the developer platform `testdev.altemista.cloud`.
 
 ## Deploy your template
-When everything looks and works as expected you can open a pull request to master.
-If necessary squash your commits first to keep the commit history clean.
+After staging your template you can open another pull request to `master` in which you can reference the online accessible template in the test environment.
+
+A reviewer will then check if your template fulfills the required quality standards and accordingly request changes to your template.
+
+If everything is okay your pull request will be squashed and merged.
