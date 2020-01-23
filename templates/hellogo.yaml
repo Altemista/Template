@@ -19,21 +19,21 @@ description: Template to generate a sample hello world program in golang.
 longDescription: |
   This template generates a Hello World application in Golang. Its purpose is to demonstrate the templating capabilities of the Developer Portal.
 
-After code generation, the program can be executed with the following commands:
-```bash
-$ docker build . -t hello
-$ docker run -p 8080:8080 hello
-```
+  After code generation, the program can be executed with the following commands:
+  ```bash
+  $ docker build . -t hello
+  $ docker run -p 8080:8080 hello
+  ```
 
-Access the program with curl or a browser on port 8080
- 
-It is possible to customize the response greeting using the Altemista CLI. Of course, the main purpose is to demonstrate how parameters can be utilized to customize the code generation process.
- 
-This template is implemented with simple shell commands. However, it is recommended to utilize powerful template engines such as Maven Archetypes, Yeoman or Golang Templates.
+  Access the program with curl or a browser on port 8080
 
-To learn more about the full template specification:
+  It is possible to customize the response greeting using the Altemista CLI. Of course, the main purpose is to demonstrate how parameters can be utilized to customize the code generation process.
 
-https://github.com/Altemista/Template
+  This template is implemented with simple shell commands. However, it is recommended to utilize powerful template engines such as Maven Archetypes, Yeoman or Golang Templates.
+
+  To learn more about the full template specification:
+
+  https://github.com/Altemista/Template
 
 
 repository: 'https://gitlab.com/jrs_nd/hello-go'
