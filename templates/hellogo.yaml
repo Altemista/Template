@@ -49,8 +49,6 @@ maintainers:
   - name: 'Jens Renè Suckert'
     email: Jens Renè Suckert <jensrene.suckert@nttdata.com>
 
-
-image: golang:latest 
 commands:
   - git clone https://gitlab.com/jrs_nd/hello-go.git .
   - sed -i 's/{{name}}/'"$eventName"'/g' main.go
