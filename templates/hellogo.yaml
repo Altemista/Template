@@ -50,11 +50,11 @@ commands:
   - git clone https://gitlab.com/jrs_nd/hello-go.git .
   - sed -i 's/{{name}}/'"$eventName"'/g' main.go
 parameters:
-- name: eventName
+- name: greeting
   type: input
-  message: "Greeting parameter"
+  message: "Whom should be greeted"
   default: World
-  tooltip: Parameter to replace the default 'World' in 'Hello World!'
+  tooltip: Parameter to replace the default 'World' in 'Hello World!', e.g. 'Hello NTT'
   url: https://go.dev
 
 icon:
