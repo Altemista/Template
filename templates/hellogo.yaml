@@ -42,7 +42,7 @@ longDescription: |
   [https://github.com/Altemista/Template](https://github.com/Altemista/Template)
 
 
-repository: 'https://gitlab.com/jrs_nd/hello-go'
+repository: 'https://github.com/Altemista/hello-go'
 provider: 'NTT Data'
 createdAt: '2019-10-30T00:00:00Z'
 maintainers:
