@@ -27,7 +27,7 @@ longDescription: |
 
   Access the program with curl or a browser on port 8080
   
-  ![Accessing the sample application](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png)
+  ![Accessing the sample application](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
 
   It is possible to customize the response greeting using the Altemista CLI. Of course, the main purpose is to demonstrate how parameters can be utilized to customize the code generation process.
 
