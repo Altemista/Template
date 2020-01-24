@@ -19,14 +19,6 @@ description: Template to generate a sample hello world program in golang.
 longDescription: |
   This template generates a Hello World application in Golang. Its purpose is to demonstrate the templating capabilities of the Developer Portal.
 
-  After code generation, the program can be executed with the following commands:
-  ```bash
-  $ docker build . -t hello
-  $ docker run -p 8080:8080 hello
-  ```
-
-  Access the program with curl or a browser on port 8080
-  
   ![Accessing the sample application](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
 
   It is possible to customize the response greeting using the Altemista CLI. For example, if you want to greet yourself then generate the code with the following comand:
@@ -41,6 +33,24 @@ longDescription: |
 
   [https://github.com/Altemista/Template](https://github.com/Altemista/Template)
 
+  Features:
+  
+  * Code for a simple http server
+  * Dockerfile
+  * CI/CD for Gitlab, Travis, Jenkins
+
+  Next Steps:
+  
+  After code generation, the program can be executed with the following commands:
+  ```bash
+  $ docker build . -t hello
+  $ docker run -p 8080:8080 hello
+  ```
+
+  Access the program with curl or a browser on port 8080
+  
+  
+  
 
 repository: 'https://github.com/Altemista/hello-go'
 provider: 'NTT Data'
