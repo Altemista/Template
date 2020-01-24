@@ -21,7 +21,6 @@ longDescription: |
 
   ![Accessing the sample application](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
 
-  ### Description
   It is possible to customize the response greeting using the Altemista CLI. For example, if you want to greet yourself then generate the code with the following comand:
   
   ```bash
