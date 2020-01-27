@@ -18,7 +18,9 @@ prerequisites:
 description: Template to generate a sample hello world program in golang.
 longDescription: |
   This template generates a Hello World application in Golang. Its purpose is to demonstrate the templating capabilities of the Developer Portal.
+  
   ![Accessing the sample application](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
+  
   It is possible to customize the response greeting using the Altemista CLI. For example, if you want to greet yourself then generate the code with the following comand:
   
   ```bash
