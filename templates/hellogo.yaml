@@ -60,12 +60,12 @@ maintainers:
     email: Jens Renè Suckert <jensrene.suckert@nttdata.com>
 
 commands:
-  - git clone https://github.com/Altemista/hello-go.git && rm -r hello-go/.git
-  - sed -i 's/{{name}}/'"$eventName"'/g' hello-go/main.go
-  - if [ "$pipeline" == 'None' ]; then rm -rf hello-go/gitlab-ci.yml hello-go/travis.yml hello-go/Jenkinsfile; fi
-  - if [ "$pipeline" == 'Gitlab' ]; then rm -rf hello-go/travis.yml hello-go/Jenkinsfile; fi
-  - if [ "$pipeline" == 'Github' ]; then rm -rf hello-go/gitlab-ci.yml hello-go/Jenkinsfile; fi
-  - if [ "$pipeline" == 'Jenkins' ]; then rm -rf hello-go/gitlab-ci.yml hello-go/travis.yml; fi
+  - git clone https://github.com/Altemista/hello-go.git . && rm -r .git
+  - sed -i 's/{{name}}/'"$greeting"'/g' main.go
+  - if [ "$pipeline" == 'None' ]; then rm -rf gitlab-ci.yml travis.yml Jenkinsfile; fi
+  - if [ "$pipeline" == 'Gitlab' ]; then rm -rf travis.yml Jenkinsfile; fi
+  - if [ "$pipeline" == 'Github' ]; then rm -rf gitlab-ci.yml Jenkinsfile; fi
+  - if [ "$pipeline" == 'Jenkins' ]; then rm -rf gitlab-ci.yml travis.yml; fi
   
 parameters:
 - name: greeting
