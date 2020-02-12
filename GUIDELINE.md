@@ -24,3 +24,9 @@ Existing Categories:
 
 If you want to add a new category to the upper list, please open a PR for this file.
 
+## Commands
+
+- When using git clone, the repository should be cloned in the current working directory, **not** a subdirectory, also to avoid confusion, the `.git` subdirectory should be deleted after cloning.
+  ```bash
+    git clone <repository-url> . && rm -rf .git
+  ```
