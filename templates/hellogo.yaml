@@ -48,17 +48,16 @@ longDescription: |
   ```
 
   Access the program with curl or a browser on port 8080
-  
-  
+    
 after: |
+  Next Steps:
+  
   After code generation, the program can be executed with the following commands:
-  ```bash
+  
   $ docker build . -t hello
   $ docker run -p 8080:8080 hello
-  ```
-
+  
   Access the program with curl or a browser on port 8080
-
 
 repository: 'https://github.com/Altemista/hello-go'
 provider: 'NTT Data'
