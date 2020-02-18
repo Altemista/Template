@@ -1,6 +1,6 @@
 name: microservices-tsf
 displayName: Basic TSF microservice infrastructure
-type: scafolding
+type: base
 
 categories:
   - Scafolding
