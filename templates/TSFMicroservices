@@ -61,7 +61,7 @@ after: |
   After code generation, just execute startInfrastructure.bat to run the infrastructure
   Go to the browser to see your eureka instance and the rest of the components
 provider: 'NTT Data'
-createdAt: '2019-10-30T00:00:00Z'
+createdAt: '2020-01-30T00:00:00Z'
 maintainers:
   - name: 'Alberto Cortes Cabello'
     email: Alberto Cortes Cabello <alberto.cortes.cabello@everis.com>
