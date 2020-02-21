@@ -58,7 +58,7 @@ longDescription: |
 after: |
   
   Next Steps:
-  After code generation, just execute startInfrastructure.bat to run the infrastructure
+  After code generation, just execute startInfrastructure.bat to run the infrastructure. Please, be patience the first time you run the script as it takes some time to finish the process because it is necessary to download all dependencies which TSF+ needs to run correctly.
   Go to the browser to see your eureka instance and the rest of the components
 provider: 'NTT Data'
 createdAt: '2020-01-30T00:00:00Z'
@@ -80,7 +80,7 @@ commands:
 - mvn tsf:feature -Dfeature=microservice-infrastructure-gateway -Dlocation=/tmp/$gateway/$gateway-boot -DconfigServerURL=$configServerURL -s /usr/share/maven/conf/settings.xml
 - cd .. && cd ..
 - mvn tsf:micros-application -DgroupId=$groupId -DartifactId=$micro -DterasolunaPlusVersion=2.0.0.RELEASE -s /usr/share/maven/conf/settings.xml
-- mv /usr/share//startInfrastructure.bat /tmp/startInfrastructure.bat
+- unzip /usr/share//startInfrastructureWindows.zip
 - sed -i -- 's/eureka_toChange/$eureka/g' /tmp/startInfrastructure.bat
 - sed -i -- 's/config_toChange/$config/g' /tmp/startInfrastructure.bat
 - sed -i -- 's/gateway_toChange/$gateway/g' /tmp/startInfrastructure.bat
