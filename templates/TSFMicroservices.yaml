@@ -25,10 +25,9 @@ longDescription: |
   applications for a microservice infrastructure implementation.
   See below the picture about the architecture that the template will create
   
-  ![Accessing the sample application](https://github.com/acortcab/TSF-template/blob/master/pics/architecture.PNG =531x166)
+  ![Accessing the sample application](https://raw.githubusercontent.com/acortcab/TSF-template/master/pics/architecture.PNG =531x166)
   
   ### Features
-
   As you can see there are 4 main components:
   
   * **Eureka server**: Eureka is a REST based service that is used for locating services for the purpose of load balancing and failover of middle-tier servers.
@@ -43,14 +42,13 @@ longDescription: |
   ```
   
   To learn more about TSF+ infrastructure:
-  [https://terasoluna.everis.com/dev/TSFplus%20Reference%20Documentation.html#microservices-infrastructure-feature)
-
+  [https://terasoluna.everis.com/dev/TSFplus%20Reference%20Documentation.html#microservices-infrastructure-feature](https://terasoluna.everis.com/dev/TSFplus%20Reference%20Documentation.html#microservices-infrastructure-feature)
   ### Next Steps
   
   After code generation, the program can be executed by using startInfrastructure.bat. In order to test it
   * Go to locahost:8761 to see the instances
   
-  ![Accessing the sample application](https://github.com/acortcab/TSF-template/blob/master/pics/eureka.PNG =531x166)
+  ![Accessing the sample application](https://raw.githubusercontent.com/acortcab/TSF-template/master/pics/eureka.PNG =531x166)
   
   * And finally, use a program like Postman to test it the endpoint of the microservice. By default there is a operation which reques is a POST request, you can find out the port where the microservice starts, checking in eureka server. Base on this, the url could be:
     **POST localhost:8080/exampleMethod**
@@ -125,4 +123,4 @@ parameters:
 - type: input
   name: micro
   message: Micro name
-  default: micro-example  
+  default: micro-example
