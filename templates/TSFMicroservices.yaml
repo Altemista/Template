@@ -60,7 +60,7 @@ after: |
   Next Steps:
   After code generation, just execute startInfrastructure.bat to run the infrastructure. Please, be patience the first time you run the script as it takes some time to finish the process because it is necessary to download all dependencies which TSF+ needs to run correctly.
   Go to the browser to see your eureka instance and the rest of the components
-provider: 'NTT Data'
+provider: 'Everis'
 createdAt: '2020-01-30T00:00:00Z'
 maintainers:
   - name: 'Alberto Cortes Cabello'
