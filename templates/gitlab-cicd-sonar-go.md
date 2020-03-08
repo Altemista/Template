@@ -44,29 +44,25 @@ longDescription: |
   * SonarQube with Go Plugin
   * Base domain configured to route traffic to Kubernetes cluser, for example CNAME record *.demo-cluster.altemista.cloud pointing to AWS LB
 
+  ## Code Generation
+
+  1. Generate code by pressing Generate button and following instructions
+  
   ## Prepare Kubernetes Cluster
   
-  1. Create namespace for application, e.g. hello-go: `kubectl create ns hello-go`
-  2. Create service account gitlab-ci and role bindings by applying rbac.yaml from deployment directory: `kubectl apply -f rbac.yaml`
-  3. Get api url: kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ {print $NF}'
-  4. Get certs: kubectl get secrets & kubectl get secret <secret name> -o jsonpath="{['data']['ca\.crt']}" | base64 --decode
-  5. Get token: kubectl -n hello-go describe secret $(kubectl -n hello-go get secret | grep gitlab-ci-token | awk '{print $1}')
-  
-  ## Integration Configuration
-
-  1. Create user token in Sonarqube: My Account > Security > User Token
-  2. Create new repository (project) in Gitlab, for example demo-gitlab-sonar-go
-  3. In new project, add Gitlab environment variables for integration with SonarQube
-     ```bash
-     SONAR_HOST_URL = [url] - for example https://sonarqube.demo-cluster.altemista.cloud
-     SONAR_TOKEN = [token_from_sonarqube]
-     ```
-  4. Add Gitlab environment variables for integration with Kubernetes
-     ```bash
-     SONAR_HOST_URL = [sonarqube_url] - for example https://sonarqube.demo-cluster.altemista.cloud
-     SONAR_TOKEN = [token_from_sonarqube]
-     ```
-  
+  1. Create namespace for application, for example hello-go: `kubectl create ns hello-go`
+  2. Create service account gitlab-ci and role bindings by applying generated rbac.yaml from deployment directory:
+     `kubectl apply -f deployment/rbac.yaml`
+     
+   ## Integration of Gitlab with Kubernetes Cluster
+   
+   1. Get api url: `kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ {print $NF}'`
+   2. Get certs: `kubectl get secrets & kubectl get secret <secret name> -o jsonpath="{['data']['ca\.crt']}" | base64 --decode`
+   3. Get token: `kubectl -n hello-go describe secret $(kubectl -n hello-go get secret | grep gitlab-ci-token | awk '{print $1}')`
+   4. Using gathered information, configure Gitlab integration with Kubernetes, like on image below:
+   
+   ![Accessing the sample application](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
+   
   ## Integrate Kubernetes with Gitlab Registry
   
   1. On project level, create deployment token with read_registry permission: Settings > Repository > Deploy Tokens
@@ -85,11 +81,17 @@ longDescription: |
   -p '{"imagePullSecrets": [{"name": "gitlab-registry-credentials"}]}'
   ```
   
-  ## Code Generation
+   ## Integration of SonarQube and Gitlab
 
-  1. Generate code by pressing Generate button and following instructions
-
-  ## Add Code to Repository
+  1. Create user token in Sonarqube: My Account > Security > User Token
+  2. Create new repository (project) in Gitlab, for example demo-gitlab-sonar-go
+  3. In new project, add Gitlab environment variables for integration with SonarQube
+     ```bash
+     SONAR_HOST_URL = [url] - for example https://sonarqube.demo-cluster.altemista.cloud
+     SONAR_TOKEN = [token_from_sonarqube]
+     ```
+  
+  ## Link Generated Code with GItlab Repository
 
   1. Push generated code to existing repository
   ```bash
