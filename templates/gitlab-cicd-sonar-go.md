@@ -34,9 +34,9 @@ longDescription: |
   * Code quality with SonarQube
   * Deployment to Kubernetes
   
-  ### Usage
+  ## Usage
   
-  ## Prerequisites
+  ### Prerequisites
 
   * Gitlab with integrated docker registry
   * Gitlab runner
@@ -44,18 +44,18 @@ longDescription: |
   * SonarQube with Go Plugin
   * Base domain configured to route traffic to Kubernetes cluser, for example CNAME record *.demo-cluster.altemista.cloud pointing to AWS LB
 
-  ## Code Generation
+  ### Code Generation
 
   1. Generate code by pressing Generate button and following instructions
   
-  ## Prepare Kubernetes Cluster
+  ### Prepare Kubernetes Cluster
   
   1. Create namespace for application, for example hello-go:  
   `kubectl create ns hello-go`
   2. Create service account gitlab-ci and role bindings by applying generated rbac.yaml from deployment directory:  
   `kubectl apply -f deployment/rbac.yaml`
      
-  ## Integrate Gitlab with Kubernetes Cluster
+  ### Integrate Gitlab with Kubernetes Cluster
    
   1. Get api url  
   `kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ {print $NF}'`
@@ -67,7 +67,7 @@ longDescription: |
    
   ![Confugure_kubernetes_cluster](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
    
-  ## Integrate Kubernetes with Gitlab Registry
+  ### Integrate Kubernetes with Gitlab Registry
   
   1. On project level, create deployment token with read_registry permission: Settings > Repository > Deploy Tokens
   2. Create secret in existing cluster
@@ -85,7 +85,7 @@ longDescription: |
   -p '{"imagePullSecrets": [{"name": "gitlab-registry-credentials"}]}'
   ```
   
-   ## Integrate SonarQube with Gitlab
+   ### Integrate SonarQube with Gitlab
 
   1. Create user token in Sonarqube: My Account > Security > User Token
   2. Create new repository (project) in Gitlab, for example demo-gitlab-sonar-go
@@ -95,7 +95,7 @@ longDescription: |
   SONAR_TOKEN = [token_from_sonarqube]
   ```
   
-  ## Link Generated Code with GItlab Repository
+  ### Link Generated Code with GItlab Repository
 
   1. Push generated code to existing repository
   ```bash
@@ -108,7 +108,7 @@ longDescription: |
   ```
   2. Monitor pipeline execution in Gitlab
 
-  ## Verify Application
+  ### Verify Application
 
   1. Access application using curl
   ```bash
