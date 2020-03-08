@@ -54,14 +54,23 @@ longDescription: |
   2. Create service account gitlab-ci and role bindings by applying generated rbac.yaml from deployment directory:
      `kubectl apply -f deployment/rbac.yaml`
      
-   ## Integration of Gitlab with Kubernetes Cluster
+   ## Integrate Gitlab with Kubernetes Cluster
    
-   1. Get api url: `kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ {print $NF}'`
-   2. Get certs: `kubectl get secrets & kubectl get secret <secret name> -o jsonpath="{['data']['ca\.crt']}" | base64 --decode`
-   3. Get token: `kubectl -n hello-go describe secret $(kubectl -n hello-go get secret | grep gitlab-ci-token | awk '{print $1}')`
+   1. Get api url
+   ```bash
+   kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ {print $NF}'`
+   ```
+   2. Get CA certificate
+   ```bash
+   kubectl get secrets & kubectl get secret <secret name> -o jsonpath="{['data']['ca\.crt']}" | base64 --decode`
+   ```
+   3. Get service token
+   ```bash
+   kubectl -n hello-go describe secret $(kubectl -n hello-go get secret | grep gitlab-ci-token | awk '{print $1}')`
+   ```
    4. Using gathered information, configure Gitlab integration with Kubernetes, like on image below:
    
-   ![Accessing the sample application](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
+   ![Confugure_kubernetes_cluster](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
    
   ## Integrate Kubernetes with Gitlab Registry
   
@@ -81,15 +90,15 @@ longDescription: |
   -p '{"imagePullSecrets": [{"name": "gitlab-registry-credentials"}]}'
   ```
   
-   ## Integration of SonarQube and Gitlab
+   ## Integrate SonarQube with Gitlab
 
   1. Create user token in Sonarqube: My Account > Security > User Token
   2. Create new repository (project) in Gitlab, for example demo-gitlab-sonar-go
   3. In new project, add Gitlab environment variables for integration with SonarQube
-     ```bash
-     SONAR_HOST_URL = [url] - for example https://sonarqube.demo-cluster.altemista.cloud
-     SONAR_TOKEN = [token_from_sonarqube]
-     ```
+  ```bash
+  SONAR_HOST_URL = [url] - for example https://sonarqube.demo-cluster.altemista.cloud
+  SONAR_TOKEN = [token_from_sonarqube]
+  ```
   
   ## Link Generated Code with GItlab Repository
 
