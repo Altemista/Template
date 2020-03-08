@@ -31,8 +31,8 @@ longDescription: |
   * Code for a simple http server
   * Dockerfile
   * CI/CD for Gitlab
-  * Integration of SonarQube in Gitlab pipeline
-  * Deployment to Kubernetes using Gitlab pipeline
+  * Code quality with SonarQube
+  * Deployment to Kubernetes
   
   ### Usage
   
@@ -44,6 +44,14 @@ longDescription: |
   * SonarQube with Go Plugin
   * Base domain configured to route traffic to Kubernetes cluser, for example CNAME record *.demo-cluster.altemista.cloud pointing to AWS LB
 
+  ## Prepare Kubernetes Cluster
+  
+  1. Create namespace for application, e.g. hello-go: `kubectl create ns hello-go`
+  2. Create service account gitlab-ci and role bindings by applying rbac.yaml from deployment directory: `kubectl apply -f rbac.yaml`
+  3. Get api url: kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ {print $NF}'
+  4. Get certs: kubectl get secrets & kubectl get secret <secret name> -o jsonpath="{['data']['ca\.crt']}" | base64 --decode
+  5. Get token: kubectl -n hello-go describe secret $(kubectl -n hello-go get secret | grep gitlab-ci-token | awk '{print $1}')
+  
   ## Integration Configuration
 
   1. Create user token in Sonarqube: My Account > Security > User Token
@@ -58,6 +66,24 @@ longDescription: |
      SONAR_HOST_URL = [sonarqube_url] - for example https://sonarqube.demo-cluster.altemista.cloud
      SONAR_TOKEN = [token_from_sonarqube]
      ```
+  
+  ## Integrate Kubernetes with Gitlab Registry
+  
+  1. On project level, create deployment token with read_registry permission: Settings > Repository > Deploy Tokens
+  2. Create secret in existing cluster
+  ```bash
+  kubectl create -n hello-go \
+  secret docker-registry gitlab-registry-credentials \
+  --docker-server=registry.altemista.cloud \
+  --docker-username=[username] \
+  --docker-password=[token]
+  ```
+  3. Add pull secret credential to default service account in hello-go namespace
+  ```bash
+  kubectl patch -n hello-go \
+  serviceaccount default \
+  -p '{"imagePullSecrets": [{"name": "gitlab-registry-credentials"}]}'
+  ```
   
   ## Code Generation
 
