@@ -53,19 +53,19 @@ longDescription: |
   1. Create namespace for application, for example hello-go:  
   `kubectl create ns hello-go`
   2. Create service account gitlab-ci and role bindings by applying generated rbac.yaml from deployment directory:  
-`kubectl apply -f deployment/rbac.yaml`
+  `kubectl apply -f deployment/rbac.yaml`
      
-   ## Integrate Gitlab with Kubernetes Cluster
+  ## Integrate Gitlab with Kubernetes Cluster
    
-   1. Get api url  
-   `kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ {print $NF}'`
-   2. Get CA certificate  
-   `kubectl get secrets & kubectl get secret <secret name> -o jsonpath="{['data']['ca\.crt']}" | base64 --decode`
-   3. Get service token  
-   `kubectl -n hello-go describe secret $(kubectl -n hello-go get secret | grep gitlab-ci-token | awk '{print $1}')`
-   4. Using gathered information, configure Gitlab integration with Kubernetes, like on image below:
+  1. Get api url  
+  `kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ {print $NF}'`
+  2. Get CA certificate  
+  `kubectl get secrets & kubectl get secret <secret name> -o jsonpath="{['data']['ca\.crt']}" | base64 --decode`
+  3. Get service token  
+  `kubectl -n hello-go describe secret $(kubectl -n hello-go get secret | grep gitlab-ci-token | awk '{print $1}')`
+  4. Using gathered information, configure Gitlab integration with Kubernetes, like on image below:
    
-   ![Confugure_kubernetes_cluster](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
+  ![Confugure_kubernetes_cluster](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
    
   ## Integrate Kubernetes with Gitlab Registry
   
