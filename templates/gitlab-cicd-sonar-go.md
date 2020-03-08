@@ -53,7 +53,7 @@ longDescription: |
   1. Create namespace for application, for example hello-go:  
   `kubectl create ns hello-go`
   2. Create service account gitlab-ci and role bindings by applying generated rbac.yaml from deployment directory:  
-  `kubectl apply -f deployment/rbac.yaml`
+`kubectl apply -f deployment/rbac.yaml`
      
    ## Integrate Gitlab with Kubernetes Cluster
    
