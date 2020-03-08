@@ -50,14 +50,15 @@ longDescription: |
   
   ## Prepare Kubernetes Cluster
   
-  1. Create namespace for application, for example hello-go: `kubectl create ns hello-go`
+  1. Create namespace for application, for example hello-go:
+  `kubectl create ns hello-go`
   2. Create service account gitlab-ci and role bindings by applying generated rbac.yaml from deployment directory:
-     `kubectl apply -f deployment/rbac.yaml`
+  `kubectl apply -f deployment/rbac.yaml`
      
    ## Integrate Gitlab with Kubernetes Cluster
    
    1. Get api url
-   `kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ {print $NF}'``
+   `kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ {print $NF}'`
    2. Get CA certificate
    `kubectl get secrets & kubectl get secret <secret name> -o jsonpath="{['data']['ca\.crt']}" | base64 --decode`
    3. Get service token
