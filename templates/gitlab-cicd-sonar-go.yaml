@@ -48,6 +48,11 @@ longDescription: |
 
   1. Generate code by pressing Generate button and following instructions
   
+  ### Precreate Gitlab Repository and Environment
+  
+  1. Create new repository (project) in Gitlab, for example demo-gitlab-sonar-go
+  2. In new project, add environment with name "dev": Operations > Environments
+  
   ### Prepare Kubernetes Cluster
   
   1. Create namespace for application, for example hello-go:  
@@ -65,11 +70,11 @@ longDescription: |
   `kubectl -n hello-go describe secret $(kubectl -n hello-go get secret | grep gitlab-ci-token | awk '{print $1}')`
   4. Using gathered information, configure Gitlab integration with Kubernetes, like on image below:
    
-  ![Confugure_kubernetes_cluster](https://raw.githubusercontent.com/Altemista/hello-go/master/pics/hello-go.png =531x166)
+  ![Confugure_kubernetes_cluster](https://raw.githubusercontent.com/Altemista/gitlab-cicd-sonar-go/master/pics/gitlab-kubernetes-integration.png =531x166)
    
   ### Integrate Kubernetes with Gitlab Registry
   
-  1. On project level, create deployment token with read_registry permission: Settings > Repository > Deploy Tokens
+  1. In Gitlab, in new project, create deployment token with read_registry permission: Settings > Repository > Deploy Tokens
   2. Create secret in existing cluster
   ```bash
   kubectl create -n hello-go \
@@ -88,8 +93,7 @@ longDescription: |
    ### Integrate SonarQube with Gitlab
 
   1. Create user token in Sonarqube: My Account > Security > User Token
-  2. Create new repository (project) in Gitlab, for example demo-gitlab-sonar-go
-  3. In new project, add Gitlab environment variables for integration with SonarQube
+  2. In new project, add Gitlab environment variables for integration with SonarQube
   ```bash
   SONAR_HOST_URL = [url] - for example https://sonarqube.demo-cluster.altemista.cloud
   SONAR_TOKEN = [token_from_sonarqube]
