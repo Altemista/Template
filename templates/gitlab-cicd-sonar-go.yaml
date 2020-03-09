@@ -66,7 +66,7 @@ longDescription: |
   ```
   2. Create service account named "gitlab-ci" and role bindings by applying generated rbac.yaml from deployment directory:
   ```bash
-  `kubectl apply -f deployment/rbac.yaml`
+  kubectl apply -f deployment/rbac.yaml
   ```
      
   ### Integrate Gitlab with Kubernetes Cluster
