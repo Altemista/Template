@@ -42,7 +42,7 @@ longDescription: |
   * Gitlab runner
   * Kubernetes cluster with ingress controller and cert-manager
   * SonarQube with Go Plugin
-  * Base domain configured to route traffic to Kubernetes cluser, for example CNAME record *.demo-cluster.altemista.cloud pointing to AWS LB
+  * Base domain configured to route traffic to Kubernetes cluster, for example CNAME record *.demo-cluster.altemista.cloud pointing to AWS LB
 
   ### Code Generation
 
