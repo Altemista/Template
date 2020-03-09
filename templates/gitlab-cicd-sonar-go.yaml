@@ -93,7 +93,7 @@ longDescription: |
   1. In Gitlab, in new project, create deployment token with read_registry permission: Settings > Repository > Deploy Tokens
   2. Create secret in existing cluster:
   ```bash
-  kubectl create -n hello-go secret docker-registry gitlab-registry-credentials --docker-server=registry.altemista.cloud \ 
+  kubectl create -n hello-go secret docker-registry gitlab-registry-credentials --docker-server=registry.altemista.cloud \
   --docker-username=[username] --docker-password=[token]
   ```
   3. Add pull secret credential to default service account in hello-go namespace:
