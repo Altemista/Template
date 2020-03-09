@@ -112,6 +112,7 @@ longDescription: |
   ```
   2. Monitor pipeline execution in Gitlab
 
+
   ### Verify Application
 
   1. Access application using curl
