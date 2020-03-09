@@ -77,11 +77,11 @@ longDescription: |
   ```
   2. Get CA certificate:
   ```bash
-  kubectl get secrets & kubectl get secret <secret name> -o jsonpath="{['data']['ca\.crt']}" | base64 --decode
+  kubectl -n hello-go get secret  $(kubectl -n hello-go get secret | grep gitlab-ci-token | awk '{print $1}') -o jsonpath="{['data']['ca\.crt']}" | base64 --decode
   ```
   3. Get service token:
   ```bash
-  kubectl -n hello-go describe secret $(kubectl -n hello-go get secret | grep gitlab-ci-token | awk '{print $1}')
+  kubectl -n hello-go describe secret gitlab-ci-token
   ```
   4. Using gathered information, configure Gitlab integration with Kubernetes, like on image below:
    
