@@ -103,7 +103,7 @@ longDescription: |
   
   ### Integrate SonarQube with Gitlab
 
-  1. Create user token in Sonarqube: My Account > Security > User Token
+  1. Create user token in Sonarqube: My Account > Security > Tokens
   2. In new project, add Gitlab environment variables for integration with SonarQube:
   ```bash
   SONAR_HOST_URL = [url] - for example https://sonarqube.demo-cluster.altemista.cloud
