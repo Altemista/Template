@@ -55,7 +55,7 @@ longDescription: |
   
   ### Prepare Kubernetes Cluster
   
-  1. Create namespace for application, for example hello-go:  
+  1. Create namespace for application named "hello-go":  
   `kubectl create ns hello-go`
   2. Create service account gitlab-ci and role bindings by applying generated rbac.yaml from deployment directory:  
   `kubectl apply -f deployment/rbac.yaml`
@@ -130,7 +130,16 @@ maintainers:
 commands:
   - git clone https://github.com/Altemista/gitlab-cicd-sonar-go.git . && rm -r .git
   - sed -i 's/{{name}}/'"$greeting"'/g' main.go
+  - sed -i 's/{{base_domain}}/'"$base_domain"'/g' deploymnet/ingress.yaml
   
+parameters:
+- name: base_domain
+  type: input
+  message: "Base domain for application access"
+  default: demo-cluster.altemista.cloud
+  tooltip: Application will be reachable using https://app_name.base_domain, e.g. hello-go.demo-cluster.altemista.cloud
+  
+
 parameters:
 - name: greeting
   type: input
