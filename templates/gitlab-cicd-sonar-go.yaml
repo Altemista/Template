@@ -114,7 +114,6 @@ longDescription: |
 
   1. Push generated code to existing repository:
   ```bash
-  cd existing_folder
   git init
   git remote add origin [repo_url]
   git add .
