@@ -58,7 +58,7 @@ longDescription: |
   ```bash
   kubectl create ns hello-go
   ```
-  2. Create service account named "gitlab-ci" and role bindings by applying generated rbac.yaml from deployment directory:  
+  2. Create service account named "gitlab-ci" and role bindings by applying generated rbac.yaml from deployment directory:
   ```bash
   `kubectl apply -f deployment/rbac.yaml`
   ```
