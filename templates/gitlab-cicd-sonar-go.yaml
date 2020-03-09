@@ -79,7 +79,7 @@ longDescription: |
   ```
   4. Using gathered information, configure Gitlab integration with Kubernetes, like on image below:
    
-  ![Confugure_kubernetes_cluster](https://raw.githubusercontent.com/Altemista/gitlab-cicd-sonar-go/master/pics/gitlab-kubernetes-integration.png =531x166)
+     ![Confugure_kubernetes_cluster](https://raw.githubusercontent.com/Altemista/gitlab-cicd-sonar-go/master/pics/gitlab-kubernetes-integration.png) <!-- .element height="50%" width="50%" -->
    
   ### Integrate Kubernetes with Gitlab Registry
   
