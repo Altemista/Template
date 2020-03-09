@@ -98,9 +98,7 @@ longDescription: |
   ```
   3. Add pull secret credential to default service account in hello-go namespace:
   ```bash
-  kubectl patch -n hello-go \
-  serviceaccount default \
-  -p '{"imagePullSecrets": [{"name": "gitlab-registry-credentials"}]}'
+  kubectl patch -n hello-go serviceaccount default -p '{"imagePullSecrets": [{"name": "gitlab-registry-credentials"}]}'
   ```
   
   ### Integrate SonarQube with Gitlab
