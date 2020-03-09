@@ -4,6 +4,12 @@ type: base
 
 categories: 
   - Website
+  
+prerequisites:
+  - name: Golang
+    type: software
+    description: Golang binary must be installed
+    link: http://golang.org
 
 version: 0.0.1
 license: MIT
@@ -151,7 +157,7 @@ parameters:
   type: input
   message: "Base domain for application access"
   default: demo-cluster.altemista.cloud
-  tooltip: Application will be reachable using https://app_name.base_domain, e.g. hello-go.demo-cluster.altemista.cloud
+  tooltip: Application will be reachable using https://app_name.base_domain, e.g. https://hello-go.demo-cluster.altemista.cloud
   
 - name: greeting
   type: input
