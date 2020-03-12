@@ -145,7 +145,7 @@ maintainers:
     email: Mile Misan <mile.misan.bp@nttdata.com>
 
 commands:
-  - git clone https://github.com/Altemista/gitlab-cicd-sonar-go.git . && rm -r .git
+  - git clone https://github.com/Altemista/gitlab-cicd-sonar-go.git . && rm -r .git && rm -rf pics
   - sed -i 's/{{name}}/'"$greeting"'/g' main.go
   - sed -i 's/{{name}}/'"$greeting"'/g' main_test.go
   - sed -i 's/{{base_domain}}/'"$base_domain"'/g' deployment/ingress.yaml
