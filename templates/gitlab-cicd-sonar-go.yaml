@@ -18,10 +18,12 @@ channel: https://mm.nttdata-labs.com/emea-lab/channels/town-square
 description: Template to generate a Gitlab CI/CD with SonarQube for hello world program in golang.
 longDescription: |
   This template generates a Hello World application in Golang with Gitlab CI/CD pipeline definition and SonarQube integration.
-
-  The main purpose is to demonstrate end to end process from code generation to deployment to Kubernetes. Integration of additional tools into CI/CD pipeline, like SonarQube, is also shown.
+  The main purpose is to demonstrate end to end flow from code generation, adding additional componenets like SonarQube, to deployment to Kubernetes. Complete flow is shown on below diagram.
+  
+  ![e2e_flow](https://raw.githubusercontent.com/Altemista/gitlab-cicd-sonar-go/master/pics/gitlab-sonar-k8s-e2e.png =1010x555)
+  
   This template requires manual steps for integration of Gitlab with SonarQube and Kubernetes. Detailed procedure is described in Usage chapter.
-
+  
   In addition, this template demonstrates how parameters can be utilized to customize the code generation process. It is possible to customize the response greeting using the Altemista CLI. For example, if you want to greet yourself then generate the code with the following command:
 
   ```bash
