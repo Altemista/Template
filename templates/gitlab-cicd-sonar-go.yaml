@@ -20,9 +20,11 @@ longDescription: |
   This template generates a Hello World application in Golang with Gitlab CI/CD pipeline definition and SonarQube integration.
   The main purpose is to demonstrate end to end flow from code generation, adding additional componenets like SonarQube, to deployment to Kubernetes. Complete flow is shown on below diagram.
   
+  
   ![e2e_flow](https://raw.githubusercontent.com/Altemista/gitlab-cicd-sonar-go/master/pics/gitlab-sonar-k8s-e2e.png =1281x416)
   
-  This template requires manual steps for integration of Gitlab with SonarQube and Kubernetes. Detailed procedure is described in Usage chapter.
+  
+  This template **requires manual steps** for integration of Gitlab with SonarQube and Kubernetes. Detailed procedure is described in **Usage chapter**.
   
   In addition, this template demonstrates how parameters can be utilized to customize the code generation process. It is possible to customize the response greeting using the Altemista CLI. For example, if you want to greet yourself then generate the code with the following command:
 
