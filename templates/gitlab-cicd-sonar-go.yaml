@@ -3,7 +3,8 @@ displayName: Gitlab CI/CD with SonarQube for Golang
 type: base
 
 categories: 
-  - Website
+  - CI/CD
+  - Scaffolding
   
 prerequisites:
   - name: Golang
