@@ -3,7 +3,7 @@ displayName: Pipeline Development Kit
 type: base
 
 categories:
-  - ci/cd
+  - CI/CD
   - Website
 
 version: 0.0.1
