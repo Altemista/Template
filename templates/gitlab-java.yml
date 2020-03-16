@@ -2,7 +2,7 @@ name: gitlab-java
 displayName: CI/CD for gitlab
 type: extension
 categories: 
-- ci/cd
+- CI/CD
 requires: 
 - java
 prerequisites:
