@@ -113,8 +113,8 @@ longDescription: |
   SONAR_TOKEN = [token_from_sonarqube]
   ```
   
-  **NOTE**: In Sonarqube Community edition code analysis results are only visible in Sonarqube. In SonarQube Develeper edition 
-  and above there is a full integration with Gitlab.
+  **NOTE**: In Sonarqube Community edition code analysis results are only visible in Sonarqube. 
+  In Develeper edition and above there is a full integration with Gitlab.
   
   ### Link Generated Code with GItlab Repository
 
