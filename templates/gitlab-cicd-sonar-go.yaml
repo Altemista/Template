@@ -4,7 +4,7 @@ type: base
 
 categories: 
   - CI/CD
-  - Scaffolding
+  - Website
   
 prerequisites:
   - name: Golang
