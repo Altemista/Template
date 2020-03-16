@@ -3,6 +3,7 @@ displayName: Gitlab CI/CD with SonarQube for Golang
 type: base
 
 categories: 
+  - CI/CD
   - Website
   
 prerequisites:
@@ -111,6 +112,9 @@ longDescription: |
   SONAR_HOST_URL = [url] - for example https://sonarqube.demo-cluster.altemista.cloud
   SONAR_TOKEN = [token_from_sonarqube]
   ```
+  
+  **NOTE**: In Sonarqube Community edition code analysis results are only visible in Sonarqube. In SonarQube Develeper edition 
+  and above there is a full integration with Gitlab.
   
   ### Link Generated Code with GItlab Repository
 
