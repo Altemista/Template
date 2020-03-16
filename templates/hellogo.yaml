@@ -74,7 +74,7 @@ commands:
 parameters:
 - name: greeting
   type: input
-  message: "Whom should be greeted"
+  message: "Who should be greeted"
   default: World
   tooltip: Parameter to replace the default 'World' in 'Hello World!', e.g. 'Hello NTT'
   url: https://github.com/Altemista/hello-go/blob/master/main.go#L11
