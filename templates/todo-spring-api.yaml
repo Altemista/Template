@@ -1,0 +1,140 @@
+name: todo-api-spring
+displayName: Springboot REST API Sample with Database Integration
+type: base
+
+categories:
+  - Backend
+  
+prerequisites:
+  - name: Java
+    type: software
+    description: Java is needed to compile the code
+    link: https://www.java.com/en/download/
+  - name: Maven
+    type: tool
+    description: Maven is needed to build and run the projects
+    link: http://maven.com
+  - name: PostgreSQL
+    type: database
+    description: This is optional and may be used to store the data of the application
+    link: https://www.postgresql.org/
+
+version: 0.1.0
+license: MIT
+channel: https://mm.nttdata-labs.com/nttdata/channels/nge-ref-project-team
+
+description: Template to generate a RESTful Service implemented in SpringBoot that showcases several good practice patterns.
+longDescription: |
+  This template generates a simple SpringBoot application. The application provides a simple RESTful API to manage Todos. 
+  The focus of this example is not on the business logic. We want to showcase several things and how they are done in Springboot in the combination with Maven.
+  Optional you can also attach the SpringBoot Server to a PostgreSQL RDBMS in order to persist your data. The easiest way to build and start this 2-Tier application is by using the Docker Compose File. More information on the usage can be found in the **Usage** section.
+  
+  ## Features
+  
+  - Code for a simple todo API
+  - Dockerfile
+  - Unit Testing
+  - Test Coverage Reporting
+  - Database Management with Flyway
+
+  ## Usage
+
+  We currently differentiate between two use-cases:
+  - Simple Deployment: Data is stored in-memory
+  - 2-Tier Application: Data is stored in a RDBMS
+
+  ### Simple Deployment
+
+  The simple application can just be built by running the following command in your `altemista`-CLI:
+
+  ```bash
+  altemista new todo-api-spring
+  ```
+
+  #### Java & Maven 
+
+  After generating the code you can easily build it by running:
+
+  ```bash
+  mvn package
+  ```
+
+  This will run the automated tests and build a `.jar`-file that you can find at `./target/nge-example-server-0.1.0-SNAPSHOT.jar`. In the same folder you will also find the test results. 
+
+  After building the code you can run it with the following command:
+
+  ```bash
+  java -jar target/nge-example-server-0.1.0-SNAPSHOT.jar
+  ```
+
+  The server will be listening to port `8080` and you can access it via your browser or `curl` at `localhost:8080/todos`. The response via `curl` should look like this:
+
+  ```bash
+  sh-3.2# curl localhost:8080/todos
+  [{"id":1,"title":"Make the world a better place","completed":false,"order":1},{"id":2,"title":"Take out the trash","completed":false,"order":2},{"id":3,"title":"Dont worry be happy","completed":true,"order":100}]
+  ```
+
+  #### Docker
+
+  Via Docker you can simply build the Dockerfile and run it
+
+  ```bash
+  docker build -t todoserver .
+  docker run --rm -p 8080:8080 todoserver
+  ```
+
+  Afterwards the application is available again at `localhost:8080`
+  
+  ### 2-Tier Application
+  
+  To configure your application to use an external PostgreSQL RDBMS use the following command with your custom configuration options:
+  ```bash
+  altemista new todo-api-spring --external_postgres="True" --postgres_url=="jdbc:postgresql://localhost:5432/postgres" --postgres_username="postgres" --postgres_password="postgres_password"
+  ```
+
+  Afterwards the steps are the same as in the **Simple Deployment**. 
+
+
+  
+after: |
+
+  Next Steps:
+  After code generation, please follow the procedure from the template Usage chapter. 
+    
+repository: 'https://github.com/Altemista/gitlab-cicd-sonar-go'
+provider: 'NTT Data'
+createdAt: '2020-03-20T00:00:00Z'
+maintainers:
+  - name: 'Felix Flohr'
+    email: Felix Flohr <felix.flohr@nttdata.com>
+
+parameters:
+  - name: external_postgres
+    type: list
+    choices: ["False", "True"]
+    tooltip: "If this option is set to false all other parameters will be ignored"
+    message: "Enable an external Postgres"
+  - name: postgres_url
+    type: input
+    message: "JDBC Connection string for your Postgres"
+    default: jdbc:postgresql://localhost:5432/postgres          
+  - name: postgres_username
+    type: input
+    message: "Username for Postgres"
+    default: postgres
+  - name: postgres_password
+    type: input
+    message: "Password for your Database User"
+    default: postgres
+
+commands:
+  - "git clone https://github.com/Altemista/springboot-todo-api.git . && rm -r .git"
+  - "if [ $external_postgres == 'True' ]; then echo 'spring.datasource.url: {{postgres_url}}' >> src/main/resources/application.yml; fi"
+  - "if [ $external_postgres == 'True' ]; then echo 'spring.datasource.username: {{postgres_username}}' >> src/main/resources/application.yml; fi"
+  - "if [ $external_postgres == 'True' ]; then echo 'spring.datasource.password: {{postgres_password}}' >> src/main/resources/application.yml; fi"
+  - "if [ $external_postgres == 'True' ]; then echo 'spring.jpa.hibernate.ddl.auto: none' >> src/main/resources/application.yml; fi"
+    
+icon:
+- base64data: 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
+  mediatype: image/png
+
