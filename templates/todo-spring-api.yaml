@@ -129,9 +129,9 @@ parameters:
 
 commands:
   - "git clone https://github.com/Altemista/springboot-todo-api.git . && rm -r .git"
-  - "if [ $external_postgres == 'True' ]; then echo 'spring.datasource.url: {{postgres_url}}' >> src/main/resources/application.yml; fi"
-  - "if [ $external_postgres == 'True' ]; then echo 'spring.datasource.username: {{postgres_username}}' >> src/main/resources/application.yml; fi"
-  - "if [ $external_postgres == 'True' ]; then echo 'spring.datasource.password: {{postgres_password}}' >> src/main/resources/application.yml; fi"
+  - "if [ $external_postgres == 'True' ]; then echo 'spring.datasource.url: "$postgres_url"' >> src/main/resources/application.yml; fi"
+  - "if [ $external_postgres == 'True' ]; then echo 'spring.datasource.username: "$postgres_username"' >> src/main/resources/application.yml; fi"
+  - "if [ $external_postgres == 'True' ]; then echo 'spring.datasource.password: "$postgres_password"' >> src/main/resources/application.yml; fi"
   - "if [ $external_postgres == 'True' ]; then echo 'spring.jpa.hibernate.ddl.auto: none' >> src/main/resources/application.yml; fi"
     
 icon:
