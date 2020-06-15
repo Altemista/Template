@@ -20,7 +20,7 @@ maintainers:
     email: Christoph Held <christoph.held@nttdata.com>
 
 commands:
-  - mvn io.quarkus:quarkus-maven-plugin:0.19.1:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DclassName=$className -Dpath=$path &&
+  - mvn io.quarkus:quarkus-maven-plugin:1.5.1.Final:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DprojectVersion=$version -DclassName=$className
  
 parameters:
 - name: groupId
