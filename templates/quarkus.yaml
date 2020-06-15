@@ -1,0 +1,49 @@
+name: Quarkus
+displayName: Quarkus
+type: base
+
+categories:
+  - Website
+
+version: 0.1
+license: MIT
+channel: https://mm.nttdata-labs.com/emea-lab/channels/town-square
+
+description: Getting started with Quarkus
+longDescription: |
+  Getting started with quarkus
+
+provider: 'NTT Data'
+createdAt: '2019-10-30T00:00:00Z'
+maintainers:
+  - name: 'Christoph Held'
+    email: Christoph Held <christoph.held@nttdata.com>
+
+commands:
+  - mvn io.quarkus:quarkus-maven-plugin:0.19.1:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DclassName=$className -Dpath=$path &&
+ 
+parameters:
+- name: groupId
+  type: input
+  message: "Group id for creating the artifact"
+  default: com.example
+- type: list
+  name: version
+  message: Which java version do you want to use?
+  choices: [1.5.0-SNAPSHOT,1.4.0-SNAPSHOT] 
+- name: artifactId
+  type: input
+  message: Artifact id for creating the artifact
+  default: getting-started
+- name: className
+  type: input
+  message: Class name for creating the initial className
+  default: org.acme.quickstart.GreetingResource
+- name: path
+  type: input
+  message: Path for the initial endpoint
+  default: "/hello"
+
+icon:
+- base64data: 
+  mediatype: image/svg+xml
