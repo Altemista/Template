@@ -19,6 +19,7 @@ maintainers:
   - name: 'Christoph Held'
     email: Christoph Held <christoph.held@nttdata.com>
 
+image: maven:3.6.2-jdk-8
 commands:
   - mvn io.quarkus:quarkus-maven-plugin:1.5.1.Final:create -DprojectGroupId=$groupId -DprojectArtifactId=$artifactId -DprojectVersion=$version -DclassName=$className
  
