@@ -19,9 +19,8 @@ maintainers:
   - name: 'Christoph Held'
     email: Christoph Held <christoph.held@nttdata.com>
 
-image: maven:3.6.2-jdk-8
 commands:
-  - mvn archetype:generate -DarchetypeGroupId=io.magentys -DarchetypeArtifactId=cinnamon-archetype -DgroupId=$groupId -DartifactId=$artifactId -Dversion=$version
+  - mvn archetype:generate -DarchetypeGroupId=io.magentys -DarchetypeArtifactId=cinnamon-archetype -DgroupId=$groupId -DartifactId=$artifactId -Dversion=$version -DMAVEN_CONFIG=/tmp
 
 
  
