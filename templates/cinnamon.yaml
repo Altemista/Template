@@ -20,7 +20,7 @@ maintainers:
     email: Christoph Held <christoph.held@nttdata.com>
 
 commands:
-  - mvn archetype:generate -DarchetypeGroupId=io.magentys -DarchetypeArtifactId=cinnamon-archetype -DgroupId=$groupId -DartifactId=$artifactId -Dversion=$version -Dmaven.repo.local=/tmp/m2
+  - mvn archetype:generate -DarchetypeGroupId=io.magentys -DarchetypeArtifactId=cinnamon-archetype -DgroupId=$groupId -DartifactId=$artifactId -Dversion=$version -Dmaven.repo.local=/var/tmp/m2
 
 
  
