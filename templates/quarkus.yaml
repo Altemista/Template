@@ -21,7 +21,7 @@ license: MIT
 
 description: Brick to create a new project based on quarkus.
 longDescription: |
-  This template will prepare a quarkus plugin
+  This template will prepare a quarkus project
 
 repository: 'https://git.altemista.cloud/altemista/altemista2/dev-portal'
 provider: 'Everis'
